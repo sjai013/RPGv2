@@ -46,8 +46,13 @@ public class TurnDisplay : MonoBehaviour
         _overTicksImage.rectTransform.anchoredPosition = new Vector2(0, 0);
         _text.rectTransform.anchoredPosition = new Vector2(baseBarSize + 2,0);
 
-        _baseTicksImage.gameObject.SetActive(true);
-        _overTicksImage.gameObject.SetActive(true);
+        if (_baseTicksImage.rectTransform.sizeDelta.x > 0)
+            _baseTicksImage.gameObject.SetActive(true);
+
+        if (_overTicksImage.rectTransform.sizeDelta.x > 0)
+            _overTicksImage.gameObject.SetActive(true);
+
+
         _text.gameObject.SetActive(true);
     }
 }
