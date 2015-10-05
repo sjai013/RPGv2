@@ -3,29 +3,48 @@ using System.Collections;
 using System.Collections.Generic;
 namespace Battle
 {
+    /// <summary>
+    /// Manages ticks required for actions and characters.
+    /// </summary>
     public class Ticks
     {
-        private const int _defaultActionCost = 3;
+        /// <summary>
+        /// Cost of a default action (i.e. Attack).
+        /// </summary>
+        public const int DefaultActionCost = 3;
 
-        [SerializeField] private int _ticksUntilNextTurn;
-        public int TicksUntilNextTurn { get { return _ticksUntilNextTurn; } set { if (_ticksUntilNextTurn == value) return; _ticksUntilNextTurn = value; _ticksUntilNextTurn = TicksUntilNextTurn; } }
-
-        [SerializeField] private int _recoveryTimeThisTurn;
-        public int RecoveryTimeThisTurn { get { return _recoveryTimeThisTurn; } set { if (_recoveryTimeThisTurn == value) return; _recoveryTimeThisTurn = value; _recoveryTimeThisTurn = RecoveryTimeThisTurn; } }
-
-        private int _baseInitialTicks;
+        /// <summary>
+        /// Determines recovery time due to previous action.
+        /// </summary>
+        public int RecoveryTime { get; private set; }
+   
+        /// <summary>
+        /// Starting ticks, under normal conditions (i.e. previous action was Attack).
+        /// </summary>
+        private readonly int _baseInitialTicks;
 
         public Ticks(int agi)
         {
-            _baseInitialTicks = _ticksUntilNextTurn = BaseTickValue(agi);
+            _baseInitialTicks = RecoveryTime = TicksRequired(agi);
         }
 
-        public void ResetTicks(int actionCost = _defaultActionCost)
+        /// <summary>
+        /// Reset ticks after taking action.  Adds recovery time based on action cost.
+        /// </summary>
+        /// <param name="actionCost">Cost of previous action taken.</param>
+        public void ResetTicks(int actionCost = DefaultActionCost)
         {
-            _ticksUntilNextTurn = _baseInitialTicks * _defaultActionCost;
+            RecoveryTime = _baseInitialTicks * DefaultActionCost;
         }
 
-        public List<int> PreviewTicksList(int agi, int nTurns = 16)
+        /// <summary>
+        /// Creates list of ticks requried for subsequent actions
+        /// </summary>
+        /// <param name="agi">Agility of character</param>
+        /// <param name="nTurns">Number of turns to forecast</param>
+        /// <param name="nextActionCost">Cost of next action</param>
+        /// <returns>List of ticks required</returns>
+        public List<int> PreviewTicksList(int agi, int nTurns = 16, int nextActionCost = DefaultActionCost)
         {
             int multiplier = 1;
             if (nTurns < 1)
@@ -34,34 +53,41 @@ namespace Battle
                 nTurns = 1;
 
             }
-
-            List<int> tickList = new List<int> {_ticksUntilNextTurn * multiplier};
-
+            List<int> tickList = new List<int> {RecoveryTime * multiplier};
             for (int i = 1; i < nTurns; i++)
             {
-                tickList.Add((int) (BaseTickValue(agi) * multiplier) + tickList[i-1]);
+                if (i == 1)
+                {
+                    tickList.Add((int) (TicksRequired(agi, nextActionCost)*multiplier) + tickList[i - 1]);
+                }
+                else
+                {
+                    tickList.Add((int)(TicksRequired(agi) * multiplier) + tickList[i - 1]);
+                }
             }
 
             return tickList;
         }
 
-        private static float AgiToBaseTicks(int agi)
+        /// <summary>
+        /// Convert agility to ticks
+        /// </summary>
+        /// <param name="agi">Agility of character</param>
+        /// /// <param name="actionCost">Action cost</param>
+        /// <returns>Base ticks required for action.</returns>
+        private static int TicksRequired(int agi, int actionCost = DefaultActionCost)
         {
-
-            float ticks =  34.08f * Mathf.Pow(agi + 1,-0.425f);
-
-
+            float ticks =  34.08f * Mathf.Pow(agi + 1,-0.425f) * actionCost;
             return Mathf.RoundToInt(ticks);
         }
 
-        private static int BaseTickValue(int agi)
-        {
-            return (int) (AgiToBaseTicks(agi)*_defaultActionCost);
-        }
-
+        /// <summary>
+        /// Subtract tick time from next action
+        /// </summary>
+        /// <param name="ticks">Amount of ticks to subtract</param>
         public void SubtractTicks(int ticks)
         {
-            _ticksUntilNextTurn -= ticks;
+            RecoveryTime -= ticks;
         }
     }
 

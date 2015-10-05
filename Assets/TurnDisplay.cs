@@ -3,6 +3,9 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
+/// <summary>
+/// Represents "box" showing how long until a character is able to move.
+/// </summary>
 public class TurnDisplay : MonoBehaviour
 { 
 
@@ -21,6 +24,11 @@ public class TurnDisplay : MonoBehaviour
         _overTicksImage.color = OverColor;
     }
 
+    /// <summary>
+    /// Draws tick
+    /// </summary>
+    /// <param name="ticks">Ticks until action</param>
+    /// <param name="name">Name of character (TO BE REPLACED BY AbstractBattleCharacter)</param>
     public void DrawTurn(int ticks, String name)
     {
         var bars = (float) ticks/_maxBaseTicks;

@@ -6,24 +6,76 @@ using UnityEngine;
 namespace Battle
 {
 
+    /// <summary>
+    /// Class for managing all characters which can take action (i.e. player, monsters)
+    /// </summary>
     public abstract class AbstractBattleCharacter: MonoBehaviour
     {
+        /// <summary>
+        /// General stats, such as character name.
+        /// </summary>
+        /// 
+        public General General { get { return _general; } }
         [SerializeField] protected General _general;
+
+        /// <summary>
+        /// Character stats, which determine combat proficiency.
+        /// </summary>
+        public Stats Stats { get { return _stats; } }
         [SerializeField] protected Stats _stats;
+
+        /// <summary>
+        /// Helper class to calculate time between actions.
+        /// </summary>
         [SerializeField] protected Ticks _ticks;
+
+        /// <summary>
+        /// Boolean to indicate whether character is in combat (i.e. it could be on the "side-benches").
+        /// </summary>
         [SerializeField] protected Boolean _inCombat;
 
+        /// <summary>
+        /// Storage for all AbstractBattleCharacters instantiated.
+        /// </summary>
         protected static List<AbstractBattleCharacter> _instances = new List<AbstractBattleCharacter>();
+
+        /// <summary>
+        /// Current active character (i.e. the one that is waiting to perform an action).
+        /// </summary>
+        [SerializeField] public static AbstractBattleCharacter ActiveBattleCharacter { get; private set; }
 
         public delegate void BattleCharBattleChar(AbstractBattleCharacter thisBattleCharacter, AbstractBattleCharacter otherBattleCharacter);
         public delegate void BattleChar(AbstractBattleCharacter thisBattleCharacter);
         public delegate void BattleCharInt(AbstractBattleCharacter thisBattleCharacter, int value);
 
+        /// <summary>
+        /// Methods to run when a new character is added to the list.  Called in the Awake method of sub classes.
+        /// </summary>
         public event BattleChar AddCharacter;
+
+        /// <summary>
+        /// Methods to run when a character is removed from the list (in the case of monsters - when they die).  NEVER CALLED.
+        /// </summary>
         public event BattleChar RemoveCharacter;
+
+        /// <summary>
+        /// Methods to run when a character replaces another character (i.e. swap side-bench and main).  NEVER CALLED.
+        /// </summary>
         public event BattleCharBattleChar ReplaceCharacter;
+
+        /// <summary>
+        /// Methods to run when character is highlighted (i.e. targetted).  NEVER CALLED.
+        /// </summary>
         public event BattleChar Highlight;
+
+        /// <summary>
+        /// Methods to ru nwhen character is unhighlighted (i.e. no longer targetted).  NEVER CALLED.
+        /// </summary>
         public event BattleChar Unhighlight;
+
+        /// <summary>
+        /// Methods to run when turns are updated.  NEVER CALLED.
+        /// </summary>
         public event BattleChar UpdateTurns;
 
         public static event BattleCharInt TakeAction;
@@ -31,26 +83,15 @@ namespace Battle
         protected virtual void Awake()
         {
             _instances.Add(this);
-            _ticks = new Ticks(_stats.Agi);
-
+            _ticks = new Ticks(Stats.Agi);
             TakeAction += UpdateTicks;
         }
 
 
-        public Stats Stats
-        {
-            get { return _stats; }
-        }
-
-        public General General
-        {
-            get { return _general; }
-        }
 
         public void RefreshHandlers()
         {
-            _stats.Refresh();
-
+            Stats.Refresh();
         }
 
         public void Remove()
@@ -83,11 +124,6 @@ namespace Battle
             OnReplaceCharacter(this, otherBattleCharacter);
         }
 
-        public List<int> CalculateTicks(int turns = 16)
-        {
-            return _ticks.PreviewTicksList(agi: _stats.Agi, nTurns: turns);
-        }
-
         protected virtual void OnHighlight(AbstractBattleCharacter thisbattlecharacter)
         {
             var handler = Highlight;
@@ -113,32 +149,56 @@ namespace Battle
 
         }
 
-        protected virtual void UpdateTicks(AbstractBattleCharacter battleCharacter, int tickCost)
+        /// <summary>
+        /// Calculate the ticks required for subsequent actions by the character.
+        /// </summary>
+        /// <param name="turns">Number of turns to look ahead.</param>
+        /// <param name="nextActionCost">Cost of next action (added from Turn 2 onwards, assuming Turn 1 is the current action anticipated)</param>
+        /// <returns>List of ticks required for the number of turns specified</returns>
+        public List<int> CalculateTicks(int turns = 16, int nextActionCost = Ticks.DefaultActionCost)
+        {
+            return _ticks.PreviewTicksList(agi: _stats.Agi, nTurns: turns, nextActionCost: nextActionCost);
+        }
+
+        /// <summary>
+        /// Update ticks for character (such as after action is taken).
+        /// </summary>
+        /// <param name="battleCharacter">Character taking action</param>
+        /// <param name="tickCost">Tick cost of ability used by character</param>
+        protected virtual void UpdateTicks(AbstractBattleCharacter battleCharacter, int tickCost = Ticks.DefaultActionCost)
         {
             if (battleCharacter == this)
             {
-                _ticks.ResetTicks();
+                _ticks.ResetTicks(tickCost);
                 return;
             }
 
             _ticks.SubtractTicks(tickCost);
         }
 
-        public static List<KeyValuePair<AbstractBattleCharacter,int>> PreviewTurnsList()
+        /// <summary>
+        /// Return next 16 expected actions, in order.
+        /// </summary>
+        /// <param name="nextActionCost">Cost of anticipated action.</param>
+        /// <returns>List of character/ticks</returns>
+        public static List<KeyValuePair<AbstractBattleCharacter,int>> PreviewTurnsList(int nextActionCost)
         {
             List<KeyValuePair<AbstractBattleCharacter, int>> turns = new List<KeyValuePair<AbstractBattleCharacter, int>>();
             foreach (var character in _instances)
             {
-                var ticks = character.CalculateTicks();
+
+                List<int> ticks = character == AbstractBattleCharacter.ActiveBattleCharacter ? character.CalculateTicks(nextActionCost: nextActionCost) : character.CalculateTicks();
                 turns.AddRange(ticks.Select(tick => new KeyValuePair<AbstractBattleCharacter, int>(character, tick)));
             }
-
             turns = turns.OrderBy(turn => turn.Value).Take(16).ToList();
-
             return turns;
         }
 
-        public static AbstractBattleCharacter NextTurn()
+        /// <summary>
+        /// Calculates which character should move next, and assigns it to current active character.
+        /// </summary>
+        /// <returns>Returns next character who will move</returns>
+        public static AbstractBattleCharacter SetNextTurn()
         {
             List<KeyValuePair<AbstractBattleCharacter, int>> turns = new List<KeyValuePair<AbstractBattleCharacter, int>>();
             foreach (var character in _instances)
@@ -148,7 +208,9 @@ namespace Battle
                 turns.AddRange(ticks.Select(tick => new KeyValuePair<AbstractBattleCharacter, int>(character, tick)));
             }
 
-            return turns.OrderBy(turn => turn.Value).First().Key;
+            var nextTurnChar =  turns.OrderBy(turn => turn.Value).First().Key;
+            ActiveBattleCharacter = nextTurnChar;
+            return nextTurnChar;
         } 
 
 

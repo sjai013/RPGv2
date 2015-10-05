@@ -26,117 +26,117 @@ namespace Battle
         public event UpdateStat LukChanged;
 
         [SerializeField] private int _hp;
-        public int Hp {get { return _hp; } set {if (_hp == value) return; _hp = value; _hp = Hp; OnHpChanged(); }}
+        public int Hp {get { return _hp; } set {if (_hp == value) return; _hp = value; OnHpChanged(); }}
 
         [SerializeField] private int _mp;
-        public int Mp { get { return _mp; } set { if (_mp == value) return; _mp = value; _mp = Mp; OnMpChanged(); } }
+        public int Mp { get { return _mp; } set { if (_mp == value) return; _mp = value; OnMpChanged(); } }
 
         [SerializeField] private int _maxHp;
-        public int MaxHp { get { return _maxHp; } set { if (_maxHp == value) return; _maxHp = value; _maxHp = MaxHp; OnMaxHpChanged(); } }
+        public int MaxHp { get { return _maxHp; } set { if (_maxHp == value) return; _maxHp = value; OnMaxHpChanged(); } }
 
         [SerializeField] private int _maxMp;
-        public int MaxMp { get { return _maxMp; } set { if (_maxMp == value) return; _maxMp = value; _maxMp = MaxHp; OnMaxMpChanged(); } }
+        public int MaxMp { get { return _maxMp; } set { if (_maxMp == value) return; _maxMp = value; OnMaxMpChanged(); } }
 
         [SerializeField] private int _str;
-        public int Str { get { return _str; } set { if (_str == value) return; _str = value; _str = Str; OnStrChanged(); } }
+        public int Str { get { return _str; } set { if (_str == value) return; _str = value; OnStrChanged(); } }
 
         [SerializeField] private int _mag;
-        public int Mag { get { return _mag; } set { if (_mag == value) return; _mag = value; _mag = Mag; OnMagChanged(); } }
+        public int Mag { get { return _mag; } set { if (_mag == value) return; _mag = value; OnMagChanged(); } }
 
         [SerializeField] private int _agi;
-        public int Agi { get { return _agi; } set { if (_agi == value) return; _agi = value; _agi = Agi; OnAgiChanged(); } }
+        public int Agi { get { return _agi; } set { if (_agi == value) return; _agi = value; OnAgiChanged(); } }
 
         [SerializeField] private int _def;
-        public int Def { get { return _def; } set { if (_def == value) return; _def = value; _def = Def; OnDefChanged(); } }
+        public int Def { get { return _def; } set { if (_def == value) return; _def = value; OnDefChanged(); } }
 
         [SerializeField] private int _eva;
-        public int Eva { get { return _eva; } set { if (_eva == value) return; _eva = value; _eva = Eva; OnEvaChanged(); } }
+        public int Eva { get { return _eva; } set { if (_eva == value) return; _eva = value; OnEvaChanged(); } }
 
         [SerializeField] private int _acc;
-        public int Acc { get { return _acc; } set { if (_acc == value) return; _acc = value; _acc = Acc; OnAccChanged(); } }
+        public int Acc { get { return _acc; } set { if (_acc == value) return; _acc = value; OnAccChanged(); } }
 
         [SerializeField] private int _mdef;
-        public int Mdef { get { return _mdef; } set { if (_mdef == value) return; _mdef = value; _mdef = Mdef; OnMdefChanged(); } }
+        public int Mdef { get { return _mdef; } set { if (_mdef == value) return; _mdef = value; OnMdefChanged(); } }
 
         [SerializeField] private int _luk;
-        public int Luk { get { return _luk; } set { if (_luk == value) return; _luk = value; _luk = Luk; OnLukChanged(); } }
+        public int Luk { get { return _luk; } set { if (_luk == value) return; _luk = value; OnLukChanged(); } }
 
         private void OnHpChanged()
         {
             var handler = HpChanged;
-            if (handler != null) handler(_hp);
+            if (handler != null) handler(Hp);
 
             var critHandler = HpCritical;
-            if (critHandler != null) critHandler(_hp <= MaxHp * 0.25);
+            if (critHandler != null) critHandler(Hp <= MaxHp * 0.25);
         }
 
         private void OnMpChanged()
         {
             var handler = MpChanged;
-            if (handler != null) handler(_mp);
+            if (handler != null) handler(Mp);
 
             var critHandler = MpCritical;
-            if (critHandler != null) critHandler(_hp <= MaxMp * 0.25);
+            if (critHandler != null) critHandler(Hp <= MaxMp * 0.25);
         }
 
         private void OnMaxHpChanged()
         {
             var handler = MaxHpChanged;
-            if (handler != null) handler(_hp);
+            if (handler != null) handler(Hp);
         }
 
         private void OnMaxMpChanged()
         {
             var handler = MaxMpChanged;
-            if (handler != null) handler(_mp);
+            if (handler != null) handler(Mp);
         }
 
         private void OnStrChanged()
         {
             var handler = StrChanged;
-            if (handler != null) handler(_str);
+            if (handler != null) handler(Str);
         }
 
         private void OnMagChanged()
         {
             var handler = MagChanged;
-            if (handler != null) handler(_mag);
+            if (handler != null) handler(Mag);
         }
 
         private void OnAgiChanged()
         {
             var handler = AgiChanged;
-            if (handler != null) handler(_agi);
+            if (handler != null) handler(Agi);
         }
 
         private void OnDefChanged()
         {
             var handler = DefChanged;
-            if (handler != null) handler(_def);
+            if (handler != null) handler(Def);
         }
 
         private void OnEvaChanged()
         {
             var handler = EvaChanged;
-            if (handler != null) handler(_eva);
+            if (handler != null) handler(Eva);
         }
 
         private void OnAccChanged()
         {
             var handler = AccChanged;
-            if (handler != null) handler(_acc);
+            if (handler != null) handler(Acc);
         }
 
         private void OnMdefChanged()
         {
             var handler = MdefChanged;
-            if (handler != null) handler(_mdef);
+            if (handler != null) handler(Mdef);
         }
 
         private void OnLukChanged()
         {
             var handler = LukChanged;
-            if (handler != null) handler(_luk);
+            if (handler != null) handler(Luk);
         }
 
         public void Refresh()
