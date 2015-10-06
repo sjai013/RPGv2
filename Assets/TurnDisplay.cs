@@ -12,9 +12,10 @@ public class TurnDisplay : MonoBehaviour
     public Color BaseColor;
     public Color OverColor;
 
-    [SerializeField] private Text _text;
+    [SerializeField] private Image _image;
     [SerializeField] private Image _baseTicksImage;
     [SerializeField] private Image _overTicksImage;
+    [SerializeField] private Image _thisTurn;
     [SerializeField] private int _maxBaseTicks;
     [SerializeField] private Vector2 _tickBarMaxSize;
     
@@ -28,8 +29,9 @@ public class TurnDisplay : MonoBehaviour
     /// Draws tick
     /// </summary>
     /// <param name="ticks">Ticks until action</param>
-    /// <param name="name">Name of character (TO BE REPLACED BY AbstractBattleCharacter)</param>
-    public void DrawTurn(int ticks, String name)
+    /// <param name="sprite">Sprite representing character</param>
+    /// <param name="thisTurn">Indicates whether this tick is in action</param>
+    public void DrawTurn(int ticks, Sprite sprite, bool thisTurn)
     {
         var bars = (float) ticks/_maxBaseTicks;
 
@@ -48,11 +50,13 @@ public class TurnDisplay : MonoBehaviour
         _overTicksImage.rectTransform.sizeDelta = new Vector2(overBarSize,
                                           _tickBarMaxSize.y);
 
-        _text.text = name;
+        
+        _image.sprite = sprite;
 
         _baseTicksImage.rectTransform.anchoredPosition = new Vector2(0, 0);
         _overTicksImage.rectTransform.anchoredPosition = new Vector2(0, 0);
-        _text.rectTransform.anchoredPosition = new Vector2(baseBarSize + 2,0);
+        _image.rectTransform.anchoredPosition = new Vector2(baseBarSize,0);
+
 
         if (_baseTicksImage.rectTransform.sizeDelta.x > 0)
             _baseTicksImage.gameObject.SetActive(true);
@@ -60,7 +64,7 @@ public class TurnDisplay : MonoBehaviour
         if (_overTicksImage.rectTransform.sizeDelta.x > 0)
             _overTicksImage.gameObject.SetActive(true);
 
-
-        _text.gameObject.SetActive(true);
+        _thisTurn.gameObject.SetActive(thisTurn);
+        _image.gameObject.SetActive(true);
     }
 }

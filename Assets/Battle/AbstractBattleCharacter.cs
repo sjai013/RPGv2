@@ -25,7 +25,8 @@ namespace Battle
         [SerializeField] protected Stats _stats;
 
         /// <summary>
-        /// Helper class to calculate time between actions.
+        /// Helper class to calculate time between actions.  Tightly coupled to Character class, but that can't be helped.
+        /// Hard to imagine how to create an abstract class which can handle ATB and CTB.
         /// </summary>
         [SerializeField] protected Ticks _ticks;
 
@@ -43,6 +44,11 @@ namespace Battle
         /// Current active character (i.e. the one that is waiting to perform an action).
         /// </summary>
         [SerializeField] public static AbstractBattleCharacter ActiveBattleCharacter { get; private set; }
+
+        [SerializeField] private Sprite _charSprite;
+        public Sprite CharSprite { get { return _charSprite; }}
+
+        [SerializeField] private Boolean isActive;
 
         public delegate void BattleCharBattleChar(AbstractBattleCharacter thisBattleCharacter, AbstractBattleCharacter otherBattleCharacter);
         public delegate void BattleChar(AbstractBattleCharacter thisBattleCharacter);
@@ -85,6 +91,9 @@ namespace Battle
             _instances.Add(this);
             _ticks = new Ticks(Stats.Agi);
             TakeAction += UpdateTicks;
+
+            if (isActive)
+                ActiveBattleCharacter = this;
         }
 
 
@@ -186,7 +195,6 @@ namespace Battle
             List<KeyValuePair<AbstractBattleCharacter, int>> turns = new List<KeyValuePair<AbstractBattleCharacter, int>>();
             foreach (var character in _instances)
             {
-
                 List<int> ticks = character == AbstractBattleCharacter.ActiveBattleCharacter ? character.CalculateTicks(nextActionCost: nextActionCost) : character.CalculateTicks();
                 turns.AddRange(ticks.Select(tick => new KeyValuePair<AbstractBattleCharacter, int>(character, tick)));
             }

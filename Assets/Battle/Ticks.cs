@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
+
 namespace Battle
 {
     /// <summary>
@@ -54,11 +56,13 @@ namespace Battle
 
             }
             List<int> tickList = new List<int> {RecoveryTime * multiplier};
+
             for (int i = 1; i < nTurns; i++)
             {
                 if (i == 1)
                 {
                     tickList.Add((int) (TicksRequired(agi, nextActionCost)*multiplier) + tickList[i - 1]);
+                    
                 }
                 else
                 {

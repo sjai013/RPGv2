@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -9,12 +10,9 @@ namespace Battle.Abilities
     [RequireComponent(typeof(Button))]
     public abstract  class AbstractAbility: MonoBehaviour, ISelectHandler, IDeselectHandler
     {
-        [SerializeField] private String _name;
-        protected String Name { get { return _name; } private set { _name = value; } }
-   
-        [Range(1,8)]
-        [SerializeField] private int _actionCost;
-        public int ActionCost { get { return _actionCost; } set { if (_actionCost == value) return; _actionCost = value;} }
+        public virtual String Name { get; protected set; }
+
+        public virtual int ActionCost { get; protected set; }
 
         public delegate void Ability(AbstractAbility ability);
 

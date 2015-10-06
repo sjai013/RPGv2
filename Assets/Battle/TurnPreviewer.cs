@@ -12,7 +12,7 @@ namespace Battle
     public class TurnPreviewer : MonoBehaviour
     {
         [SerializeField] private GameObject _content;
-
+        
         [SerializeField] private GameObject _turnIndicator;
 
         void Awake()
@@ -31,10 +31,11 @@ namespace Battle
 
             foreach (var turn in turns)
             {
+                bool thisTurn = turn.Equals(turns.First());
                 GameObject gO = Instantiate(_turnIndicator);
                 gO.transform.SetParent(_content.transform);
                 gO.transform.localScale = Vector3.one;
-                gO.GetComponent<TurnDisplay>().DrawTurn(turn.Value - turns[0].Value, turn.Key.General.Name);
+                gO.GetComponent<TurnDisplay>().DrawTurn(turn.Value - turns[0].Value, turn.Key.CharSprite, thisTurn);
 
             }
         }
