@@ -15,7 +15,9 @@ public class TurnDisplay : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] private Image _baseTicksImage;
     [SerializeField] private Image _overTicksImage;
-    [SerializeField] private Image _thisTurn;
+    [SerializeField] private Image _thisTurnImage;
+    [SerializeField] private Image _targettedFriendlyImage;
+    [SerializeField] private Image _targettedEnemyImage;
     [SerializeField] private int _maxBaseTicks;
     [SerializeField] private Vector2 _tickBarMaxSize;
     
@@ -31,7 +33,7 @@ public class TurnDisplay : MonoBehaviour
     /// <param name="ticks">Ticks until action</param>
     /// <param name="sprite">Sprite representing character</param>
     /// <param name="thisTurn">Indicates whether this tick is in action</param>
-    public void DrawTurn(int ticks, Sprite sprite, bool thisTurn)
+    public void DrawTurn(int ticks, Sprite sprite, bool thisTurn, bool targetted, bool friendly)
     {
         var bars = (float) ticks/_maxBaseTicks;
 
@@ -64,7 +66,7 @@ public class TurnDisplay : MonoBehaviour
         if (_overTicksImage.rectTransform.sizeDelta.x > 0)
             _overTicksImage.gameObject.SetActive(true);
 
-        _thisTurn.gameObject.SetActive(thisTurn);
+        _thisTurnImage.gameObject.SetActive(thisTurn);
         _image.gameObject.SetActive(true);
     }
 }

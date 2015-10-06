@@ -35,7 +35,7 @@ namespace Battle
                 GameObject gO = Instantiate(_turnIndicator);
                 gO.transform.SetParent(_content.transform);
                 gO.transform.localScale = Vector3.one;
-                gO.GetComponent<TurnDisplay>().DrawTurn(turn.Value - turns[0].Value, turn.Key.CharSprite, thisTurn);
+                gO.GetComponent<TurnDisplay>().DrawTurn(turn.Value - turns[0].Value, turn.Key.CharSprite, thisTurn, false, false);
 
             }
         }
