@@ -1,19 +1,20 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-namespace Battle
+namespace Battle.Turn
 {
     /// <summary>
     /// Manages ticks required for actions and characters.
     /// </summary>
-    public class Ticks
+    public class Ticks : ITurn
     {
+
+        public event BattleChar TakeAction;
+
         /// <summary>
         /// Cost of a default action (i.e. Attack).
         /// </summary>
-        public const int DefaultActionCost = 3;
+        [SerializeField] public const int DefaultActionCost = 3;
 
         /// <summary>
         /// Determines recovery time due to previous action.
@@ -92,6 +93,13 @@ namespace Battle
         public void SubtractTicks(int ticks)
         {
             RecoveryTime -= ticks;
+        }
+
+
+        protected virtual void OnTakeAction(AbstractBattleCharacter thisbattlecharacter)
+        {
+            var handler = TakeAction;
+            if (handler != null) handler(thisbattlecharacter);
         }
     }
 
