@@ -9,7 +9,16 @@ namespace Battle.Turn
     public class Ticks : ITurn
     {
 
-        public event BattleChar TakeAction;
+        public event BattleCharDelegate TakeAction;
+        public AbstractBattleCharacter Character { get; set; }
+
+        public bool IncrementTime()
+        {
+            if (--RecoveryTime != 0) return false;
+
+            OnTakeAction(Character);
+            return true;
+        }
 
         /// <summary>
         /// Cost of a default action (i.e. Attack).
@@ -26,9 +35,11 @@ namespace Battle.Turn
         /// </summary>
         private readonly int _baseInitialTicks;
 
-        public Ticks(int agi)
+        public Ticks(AbstractBattleCharacter character)
         {
-            _baseInitialTicks = RecoveryTime = TicksRequired(agi);
+            _baseInitialTicks = TicksRequired(character.Stats.Agi);
+            RecoveryTime = _baseInitialTicks*DefaultActionCost;
+            Character = character;
         }
 
         /// <summary>
@@ -56,8 +67,7 @@ namespace Battle.Turn
                 nTurns = 1;
 
             }
-            List<int> tickList = new List<int> {RecoveryTime * multiplier};
-
+            List<int> tickList = new List<int> {RecoveryTime};
             for (int i = 1; i < nTurns; i++)
             {
                 if (i == 1)
@@ -96,10 +106,10 @@ namespace Battle.Turn
         }
 
 
-        protected virtual void OnTakeAction(AbstractBattleCharacter thisbattlecharacter)
+        protected virtual void OnTakeAction(AbstractBattleCharacter character)
         {
             var handler = TakeAction;
-            if (handler != null) handler(thisbattlecharacter);
+            if (handler != null) handler(character);
         }
     }
 

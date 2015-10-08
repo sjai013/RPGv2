@@ -36,12 +36,18 @@ namespace Battle
                 if (_turnSystem == null)
                 {
                     _turnSystem = value;
+                    InitialiseTurnSystem(TurnSystem);
                 }
                 else
                 {
                     Debug.LogError("Attempting to assign multiple Turn Systems.");
                 }
             }
+        }
+
+        protected virtual void InitialiseTurnSystem(ITurn turnSystem)
+        {
+            turnSystem.TakeAction += TakeAction;
         }
 
         /// <summary>
@@ -110,11 +116,10 @@ namespace Battle
         }
 
 
-        void Start()
+        protected virtual void TakeAction(AbstractBattleCharacter character)
         {
-                
+            throw new NotImplementedException();
         }
-
 
         public void RefreshHandlers()
         {

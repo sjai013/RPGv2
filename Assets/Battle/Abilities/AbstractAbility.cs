@@ -8,13 +8,26 @@ using UnityEngine.UI;
 namespace Battle.Abilities
 {
     [RequireComponent(typeof(Button))]
-    public abstract  class AbstractAbility: MonoBehaviour, ISelectHandler, IDeselectHandler
+    public abstract  class AbstractAbility: MonoBehaviour, ISelectHandler, IDeselectHandler, ISubmitHandler
     {
+        protected enum TargetTypes
+        {
+            Self,
+            OneFriendly,
+            OneEnemy,
+            OneEnemyOrFriendly,
+            AllFriendly,
+            AllEnemy,
+            AllFriendlyOrEnemy,
+            All
+        };
+
+        protected virtual TargetTypes TargetType { get; set; }
         public virtual String Name { get; protected set; }
 
         public virtual int ActionCost { get; protected set; }
 
-        public delegate void Ability(AbstractAbility ability);
+        public delegate void Ability(AbstractAbility ability, List<AbstractBattleCharacter> alliesAffected, List<AbstractBattleCharacter> enemiesAffected);
 
         public static event Ability SelectedAbilityChanged;
 
@@ -22,19 +35,28 @@ namespace Battle.Abilities
 
         private static AbstractAbility _currentAbility;
 
-        public static AbstractAbility CurrentSelectedAbility { get { return _currentAbility; }
-            protected set { if (_currentAbility == value) return; _currentAbility = value; OnChangeSelection(value); } }
+        public static AbstractAbility CurrentSelectedAbility
+        {
+            get
+            {
+                return _currentAbility; 
+                
+            }
+
+            protected set
+            {
+                if (_currentAbility == value)
+                    return;
+
+                _currentAbility = value;
+                if (value == null) return;
+                value.OnSelectedAbilityChanged(value);
+            }
+        }
 
         void Awake()
         {
             _abilities.Add(this);
-        }
-
-        private static void OnChangeSelection(AbstractAbility selected)
-        {
-            if (selected == null) return;
-            Debug.Log("Selected " + selected);
-            selected.OnSelectedAbilityChanged(selected);
         }
 
 
@@ -51,7 +73,12 @@ namespace Battle.Abilities
         protected virtual void OnSelectedAbilityChanged(AbstractAbility ability)
         {
             var handler = SelectedAbilityChanged;
-            if (handler != null) handler(ability);
+            if (handler != null) handler(ability, null, null);
+        }
+
+        public virtual void OnSubmit(BaseEventData eventData)
+        {
+            Debug.Log("Bring up targetting window to select targets");
         }
     }
 }
