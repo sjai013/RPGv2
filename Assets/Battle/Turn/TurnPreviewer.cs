@@ -44,8 +44,6 @@ namespace Battle
 
         IEnumerator UpdateTurns(List<AbstractBattleCharacter> characters)
         {
-            if (_updatingTurns) yield return null;
-
             _updatingTurns = true;
             Debug.Log("Update Turns");
             _canvasGroup.alpha = 0.0f;

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Battle.Abilities;
+using Battle.Targetter;
 using Battle.Turn;
 using UnityEngine;
-using UnityEngineInternal;
 
 namespace Battle
 {
@@ -45,10 +46,39 @@ namespace Battle
             }
         }
 
+        private static AbstractTargetter _targettingSystem;
+        public static AbstractTargetter TargettingSystem
+        {
+            get { return _targettingSystem; }
+            set
+            {
+                if (_targettingSystem == null)
+                {
+                    _targettingSystem = value;
+                    InitialiseTargettingSystem(TargettingSystem);
+                }
+                else
+                {
+                    Debug.LogError("Attempting to assign multiple Targetting Systems.");
+                }
+            }
+        }
+
         protected virtual void InitialiseTurnSystem(ITurn turnSystem)
         {
             turnSystem.TakeAction += TakeAction;
         }
+
+        protected static void InitialiseTargettingSystem(AbstractTargetter targettingSystem)
+        {
+            targettingSystem.ActionTargetSelected += DoAction;
+        }
+
+        private static void DoAction(AbstractBattleCharacter caster, List<AbstractBattleCharacter> targets, AbstractAbility ability)
+        {
+            Debug.Log(caster + " " + targets[0] + " " + ability);
+        }
+
 
         /// <summary>
         /// Boolean to indicate whether character is in combat (i.e. it could be on the "side-benches").
@@ -59,8 +89,19 @@ namespace Battle
         /// Storage for all AbstractBattleCharacters instantiated.
         /// </summary>
         protected static List<AbstractBattleCharacter> _instances = new List<AbstractBattleCharacter>();
-
         public static List<AbstractBattleCharacter> Characters { get { return _instances; } }
+
+        /// <summary>
+        /// Storage for all friendly characters (PlayableCharacter)
+        /// </summary>
+        protected static List<AbstractBattleCharacter> _friendly = new List<AbstractBattleCharacter>();
+        public static List<AbstractBattleCharacter> Friendlies { get { return _friendly; } }
+
+        /// <summary>
+        /// Storage for all enemy characters (MonsterCharacter)
+        /// </summary>
+        protected static List<AbstractBattleCharacter> _enemies = new List<AbstractBattleCharacter>();
+        public static List<AbstractBattleCharacter> Enemies { get { return _enemies; } }
 
         /// <summary>
         /// Current active character (i.e. the one that is waiting to perform an action).
@@ -94,31 +135,52 @@ namespace Battle
         /// <summary>
         /// Methods to run when character is highlighted (i.e. targetted).  NEVER CALLED.
         /// </summary>
-        public event BattleChar Highlight;
+        public event BattleChar HighlightEvent;
 
         /// <summary>
-        /// Methods to ru nwhen character is unhighlighted (i.e. no longer targetted).  NEVER CALLED.
+        /// Methods to run when character is unhighlighted (i.e. no longer targetted).  NEVER CALLED.
         /// </summary>
-        public event BattleChar Unhighlight;
+        public event BattleChar UnhighlightEvent;
 
         /// <summary>
         /// Methods to run when turns are updated.  NEVER CALLED.
         /// </summary>
         public event BattleChar UpdateTurns;
 
-        protected virtual void Awake()
+        protected void Awake()
         {
-
             _instances.Add(this);
 
             if (isActive)
                 ActiveBattleCharacter = this;
+
+            if (this.GetType() == typeof(PlayableCharacter))
+            {
+                _friendly.Add(this);
+            } else if (this.GetType() == typeof (MonsterCharacter))
+            {
+                _enemies.Add(this);
+            }
+            else
+            {
+                Debug.Log("Unknown character allegiance");
+            }
+
         }
 
+        public bool IsFriendly()
+        {
+            return Friendlies.Any(c => c.Equals(this));
+        }
+
+        public bool IsEnemy()
+        {
+            return Enemies.Any(c => c.Equals(this));
+        }
 
         protected virtual void TakeAction(AbstractBattleCharacter character)
         {
-            throw new NotImplementedException();
+            ActiveBattleCharacter = this;
         }
 
         public void RefreshHandlers()
@@ -156,25 +218,32 @@ namespace Battle
             OnReplaceCharacter(this, otherBattleCharacter);
         }
 
-        protected virtual void OnHighlight(AbstractBattleCharacter thisbattlecharacter)
-        {
-            var handler = Highlight;
-            if (handler != null) handler(thisbattlecharacter);
-        }
-
-        protected virtual void OnUnhighlight(AbstractBattleCharacter thisbattlecharacter)
-        {
-            var handler = Unhighlight;
-            if (handler != null) handler(thisbattlecharacter);
-        }
-
         protected virtual void OnUpdateTurns(AbstractBattleCharacter thisbattlecharacter)
         {
             var handler = UpdateTurns;
             if (handler != null) handler(thisbattlecharacter);
         }
 
+        protected virtual void OnUnhighlightEvent(AbstractBattleCharacter thisbattlecharacter)
+        {
+            var handler = UnhighlightEvent;
+            if (handler != null) handler(thisbattlecharacter);
+        }
 
+        protected virtual void OnHighlightEvent(AbstractBattleCharacter thisbattlecharacter)
+        {
+            var handler = HighlightEvent;
+            if (handler != null) handler(thisbattlecharacter);
+        }
+
+        public Vector3 Size()
+        {
+            //return Vector3.Scale(gameObject.GetComponentInChildren<Renderer>().bounds.size, gameObject.GetComponentInChildren<Renderer>().gameObject.transform.localScale);
+            return gameObject.GetComponentInChildren<Renderer>().bounds.size;
+        }
+
+        public abstract void Highlight();
+        public abstract void Unhighlight();
     }
 
 }

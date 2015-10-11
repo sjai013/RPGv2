@@ -43,8 +43,8 @@ public class PlayerStatus : MonoBehaviour
         _character.Stats.HpChanged += UpdateHp;
         _character.Stats.MpChanged += UpdateMp;
         _character.Stats.HpCritical += HpCritical;
-        _character.Highlight += HighlightThis;
-        _character.Unhighlight += UnhighlightThis;
+        _character.HighlightEvent += HighlightEventThis;
+        _character.UnhighlightEvent += UnhighlightEventThis;
     }
 
     void UnregisterEventHandlers(AbstractBattleCharacter battleCharacter)
@@ -52,8 +52,8 @@ public class PlayerStatus : MonoBehaviour
         _character.Stats.HpChanged -= UpdateHp;
         _character.Stats.MpChanged -= UpdateMp;
         _character.Stats.HpCritical -= HpCritical;
-        _character.Highlight -= HighlightThis;
-        _character.Unhighlight -= UnhighlightThis;
+        _character.HighlightEvent -= HighlightEventThis;
+        _character.UnhighlightEvent -= UnhighlightEventThis;
     }
 
 
@@ -94,7 +94,7 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-    void HighlightThis(AbstractBattleCharacter battleCharacter)
+    void HighlightEventThis(AbstractBattleCharacter battleCharacter)
     {
         if (battleCharacter == (AbstractBattleCharacter) _character)
         {
@@ -103,7 +103,7 @@ public class PlayerStatus : MonoBehaviour
         
     }
 
-    void UnhighlightThis(AbstractBattleCharacter battleCharacter)
+    void UnhighlightEventThis(AbstractBattleCharacter battleCharacter)
     {
         if (battleCharacter == (AbstractBattleCharacter)_character)
         {

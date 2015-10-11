@@ -13,5 +13,15 @@ namespace Battle
         void Update () {
 	
         }
+
+        public override void Highlight()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void Unhighlight()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

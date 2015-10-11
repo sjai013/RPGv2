@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Battle.Menu;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -10,7 +11,7 @@ namespace Battle.Abilities
     [RequireComponent(typeof(Button))]
     public abstract  class AbstractAbility: MonoBehaviour, ISelectHandler, IDeselectHandler, ISubmitHandler
     {
-        protected enum TargetTypes
+        public enum TargetTypes
         {
             Self,
             OneFriendly,
@@ -22,16 +23,27 @@ namespace Battle.Abilities
             All
         };
 
-        protected virtual TargetTypes TargetType { get; set; }
+        public enum DefaultTargetType
+        {
+            Self,
+            Allies,
+            Enemy
+        }
+
+
+        public abstract TargetTypes TargetType { get; }
         public virtual String Name { get; protected set; }
+        public abstract DefaultTargetType DefaultTarget { get; }
 
         public virtual int ActionCost { get; protected set; }
 
-        public delegate void Ability(AbstractAbility ability, List<AbstractBattleCharacter> alliesAffected, List<AbstractBattleCharacter> enemiesAffected);
+        public delegate void AbilityTargets(AbstractAbility ability, List<AbstractBattleCharacter> alliesAffected, List<AbstractBattleCharacter> enemiesAffected);
+        public delegate void Ability(AbstractAbility ability);
 
-        public static event Ability SelectedAbilityChanged;
+        public static event AbilityTargets SelectedAbilityChanged;
+        public static event Ability AbilitySubmit;
 
-        private static List<AbstractAbility> _abilities = new List<AbstractAbility>();
+        private static Dictionary<String,AbstractAbility> _abilities = new Dictionary<String, AbstractAbility>();
 
         private static AbstractAbility _currentAbility;
 
@@ -54,19 +66,34 @@ namespace Battle.Abilities
             }
         }
 
+        [SerializeField] private GameObject _pointer;
+        [SerializeField] protected CanvasGroup _mainActionCanvasGroup;
+
+        private Button _button;
+
         void Awake()
         {
-            _abilities.Add(this);
+            _abilities.Add(this.Name,this);
+            _button = GetComponent<Button>();
+
         }
 
+        public void Select()
+        {
+            OnSelect(null);
+        }
 
         public void OnSelect(BaseEventData eventData)
         {
+            _button.OnSelect(eventData);
+            _pointer.SetActive(true);            
             CurrentSelectedAbility = this;
         }
 
         public void OnDeselect(BaseEventData eventData)
         {
+
+            _pointer.SetActive(false);
             CurrentSelectedAbility = null;
         }
 
@@ -78,7 +105,20 @@ namespace Battle.Abilities
 
         public virtual void OnSubmit(BaseEventData eventData)
         {
+            
             Debug.Log("Bring up targetting window to select targets");
+            Debug.Log(this.name);
+            OnAbilitySubmit(this);
+
+             _mainActionCanvasGroup.interactable = false;
+             _mainActionCanvasGroup.gameObject.SetActive(false);
         }
+
+        protected static void OnAbilitySubmit(AbstractAbility ability)
+        {
+            var handler = AbilitySubmit;
+            if (handler != null) handler(ability);
+        }
+
     }
 }

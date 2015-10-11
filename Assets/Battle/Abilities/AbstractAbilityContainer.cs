@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using ExtensionMethods;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Battle.Abilities
 {
@@ -8,7 +10,21 @@ namespace Battle.Abilities
     /// </summary>
     public abstract class AbstractAbilityContainer : AbstractAbility
     {
+        public override void OnSubmit(BaseEventData eventData)
+        {
 
+            Debug.Log("Bring up another window to select sub-ability");
+            Debug.Log(this.name);
+            //OnAbilitySubmit(this);
+            _mainActionCanvasGroup.interactable = false;
+
+            StartCoroutine(_mainActionCanvasGroup.Fade(1.0f, 0.0f, 0.25f,
+                delegate() { _mainActionCanvasGroup.gameObject.SetActive(false); }));
+           // StartCoroutine(_mainActionCanvasGroup.Fade(1.0f, 0.0f, 5.15f,
+             //   delegate() { _mainActionCanvasGroup.gameObject.SetActive(false); Debug.Log("ASDA");}));
+
+
+        }
 
     }
 }
