@@ -76,7 +76,18 @@ namespace Battle
 
         private static void DoAction(AbstractBattleCharacter caster, List<AbstractBattleCharacter> targets, AbstractAbility ability)
         {
+            
             Debug.Log(caster + " " + targets[0] + " " + ability);
+            if (targets.Count == 1)
+            {
+                ability.DamageBehaviour.DoDamage(caster, targets[0]);
+            }
+            else
+            {
+                ability.DamageBehaviour.DoDamage(caster, targets);
+            }
+                
+
         }
 
 

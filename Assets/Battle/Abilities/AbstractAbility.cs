@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Battle.Abilities.Damage;
 using Battle.Menu;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -32,8 +33,9 @@ namespace Battle.Abilities
 
 
         public abstract TargetTypes TargetType { get; }
-        public virtual String Name { get; protected set; }
+        public abstract String Name { get; }
         public abstract DefaultTargetType DefaultTarget { get; }
+        public abstract AbstractDamageBehaviour DamageBehaviour { get;  }
 
         public virtual int ActionCost { get; protected set; }
 
