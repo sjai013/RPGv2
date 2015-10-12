@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Battle.Abilities.Damage
@@ -10,6 +11,11 @@ namespace Battle.Abilities.Damage
         public override void DoDamage(AbstractBattleCharacter caster, AbstractBattleCharacter target)
         {
             Debug.Log(_baseDamage(caster) * _damageReductionProportion(target));
+        }
+
+        public override void DoDamage(AbstractBattleCharacter caster, List<AbstractBattleCharacter> target)
+        {
+            throw new NotImplementedException();
         }
 
         private float _baseDamage(AbstractBattleCharacter caster)
