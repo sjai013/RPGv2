@@ -11,6 +11,7 @@ namespace Battle.Abilities.Damage
         public override void DoDamage(AbstractBattleCharacter caster, AbstractBattleCharacter target)
         {
             Debug.Log(_baseDamage(caster) * _damageReductionProportion(target));
+            
         }
 
         public override void DoDamage(AbstractBattleCharacter caster, List<AbstractBattleCharacter> target)

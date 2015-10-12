@@ -77,6 +77,7 @@ namespace Battle
         private static void DoAction(AbstractBattleCharacter caster, List<AbstractBattleCharacter> targets, AbstractAbility ability)
         {
             
+            //Perhaps have code for animation here
             Debug.Log(caster + " " + targets[0] + " " + ability);
             if (targets.Count == 1)
             {
