@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Battle.Abilities;
+using Battle.Abilities.Damage;
 using Battle.Targetter;
 using Battle.Turn;
+using ExtensionMethods;
 using UnityEngine;
 
 namespace Battle
@@ -71,24 +74,7 @@ namespace Battle
 
         protected static void InitialiseTargettingSystem(AbstractTargetter targettingSystem)
         {
-            targettingSystem.ActionTargetSelected += DoAction;
-        }
-
-        private static void DoAction(AbstractBattleCharacter caster, List<AbstractBattleCharacter> targets, AbstractAbility ability)
-        {
             
-            //Perhaps have code for animation here
-            Debug.Log(caster + " " + targets[0] + " " + ability);
-            if (targets.Count == 1)
-            {
-                ability.DamageBehaviour.DoDamage(caster, targets[0]);
-            }
-            else
-            {
-                ability.DamageBehaviour.DoDamage(caster, targets);
-            }
-                
-
         }
 
 

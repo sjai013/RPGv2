@@ -1,0 +1,1913 @@
+fileFormatVersion: 2
+guid: 0ca4d9a0a0cb53c4ea08f481948e6dce
+timeCreated: 1444890063
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: ankle_L
+    100002: ankle_R
+    100004: Arrows2_0
+    100006: Arrows4_0_B_L
+    100008: Arrows5_0_B_R
+    100010: Arrows6_0_C_L
+    100012: attach_attack2
+    100014: attach_bone
+    100016: bicep_L
+    100018: bicep_R
+    100020: Bow1_0
+    100022: Bow2_0_A_L
+    100024: Bow3_0_A_R
+    100026: bow8_0_D_L
+    100028: bow8_1_D_L
+    100030: bow9_0_D_R
+    100032: bow9_1_D_R
+    100034: cape_R0C0
+    100036: cape_R0C1
+    100038: cape_R0C2
+    100040: cape_R1C0
+    100042: cape_R1C1
+    100044: cape_R1C2
+    100046: cape_R2C0
+    100048: cape_R2C1
+    100050: cape_R2C2
+    100052: cape_R3C0
+    100054: cape_R3C1
+    100056: cape_R3C2
+    100058: cape_R4C0
+    100060: cape_R4C1
+    100062: cape_R4C2
+    100064: cape_R5C0
+    100066: cape_R5C1
+    100068: cape_R5C2
+    100070: clavicle_L
+    100072: clavicle_R
+    100074: //RootNode
+    100076: drow_bracers_model_dmx
+    100078: drow_cape_model_dmx
+    100080: drow_legs_model_dmx
+    100082: drow_model_dmx
+    100084: drow_model_dmx_skeleton
+    100086: drow_quiver_model_dmx
+    100088: drow_shoulders_model_dmx
+    100090: drow_weapon_model_dmx
+    100092: elbow_L
+    100094: elbow_R
+    100096: head
+    100098: index_0_L
+    100100: index_0_R
+    100102: index_1_L
+    100104: index_1_R
+    100106: index_2_L
+    100108: index_2_R
+    100110: knee_L
+    100112: knee_R
+    100114: mid_0_L
+    100116: mid_0_R
+    100118: mid_1_L
+    100120: mid_1_R
+    100122: neck1
+    100124: root
+    100126: spine1
+    100128: spine2
+    100130: spine3
+    100132: thigh_L
+    100134: thigh_R
+    100136: thumb_0_L
+    100138: thumb_0_R
+    100140: thumb_1_L
+    100142: thumb_1_R
+    100144: thumb_2_L
+    100146: thumb_2_R
+    100148: toeBase_L
+    100150: toeBase_R
+    100152: wrist_L
+    100154: wrist_R
+    100156: drow_haircowl_model_dmx
+    400000: ankle_L
+    400002: ankle_R
+    400004: Arrows2_0
+    400006: Arrows4_0_B_L
+    400008: Arrows5_0_B_R
+    400010: Arrows6_0_C_L
+    400012: attach_attack2
+    400014: attach_bone
+    400016: bicep_L
+    400018: bicep_R
+    400020: Bow1_0
+    400022: Bow2_0_A_L
+    400024: Bow3_0_A_R
+    400026: bow8_0_D_L
+    400028: bow8_1_D_L
+    400030: bow9_0_D_R
+    400032: bow9_1_D_R
+    400034: cape_R0C0
+    400036: cape_R0C1
+    400038: cape_R0C2
+    400040: cape_R1C0
+    400042: cape_R1C1
+    400044: cape_R1C2
+    400046: cape_R2C0
+    400048: cape_R2C1
+    400050: cape_R2C2
+    400052: cape_R3C0
+    400054: cape_R3C1
+    400056: cape_R3C2
+    400058: cape_R4C0
+    400060: cape_R4C1
+    400062: cape_R4C2
+    400064: cape_R5C0
+    400066: cape_R5C1
+    400068: cape_R5C2
+    400070: clavicle_L
+    400072: clavicle_R
+    400074: //RootNode
+    400076: drow_bracers_model_dmx
+    400078: drow_cape_model_dmx
+    400080: drow_legs_model_dmx
+    400082: drow_model_dmx
+    400084: drow_model_dmx_skeleton
+    400086: drow_quiver_model_dmx
+    400088: drow_shoulders_model_dmx
+    400090: drow_weapon_model_dmx
+    400092: elbow_L
+    400094: elbow_R
+    400096: head
+    400098: index_0_L
+    400100: index_0_R
+    400102: index_1_L
+    400104: index_1_R
+    400106: index_2_L
+    400108: index_2_R
+    400110: knee_L
+    400112: knee_R
+    400114: mid_0_L
+    400116: mid_0_R
+    400118: mid_1_L
+    400120: mid_1_R
+    400122: neck1
+    400124: root
+    400126: spine1
+    400128: spine2
+    400130: spine3
+    400132: thigh_L
+    400134: thigh_R
+    400136: thumb_0_L
+    400138: thumb_0_R
+    400140: thumb_1_L
+    400142: thumb_1_R
+    400144: thumb_2_L
+    400146: thumb_2_R
+    400148: toeBase_L
+    400150: toeBase_R
+    400152: wrist_L
+    400154: wrist_R
+    400156: drow_haircowl_model_dmx
+    4300000: drow_bracers_model_dmx
+    4300002: drow_weapon_model_dmx
+    4300004: drow_shoulders_model_dmx
+    4300006: drow_quiver_model_dmx
+    4300008: drow_legs_model_dmx
+    4300010: drow_cape_model_dmx
+    4300012: drow_model_dmx
+    4300014: drow_haircowl_model_dmx
+    7400000: Default Take
+    7400002: attack01
+    7400004: attack_fast
+    7400006: attack_frost_arrow
+    7400008: death
+    7400010: idle
+    7400012: idle_alt
+    7400014: run
+    7400016: silence
+    7400018: silence_001
+    7400020: spawn
+    7400022: spawn_001
+    7400024: stun
+    9500000: //RootNode
+    13700000: drow_bracers_model_dmx
+    13700002: drow_cape_model_dmx
+    13700004: drow_legs_model_dmx
+    13700006: drow_model_dmx
+    13700008: drow_quiver_model_dmx
+    13700010: drow_shoulders_model_dmx
+    13700012: drow_weapon_model_dmx
+    13700014: drow_haircowl_model_dmx
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: attack_fast
+      takeName: attack_fast
+      firstFrame: 0
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: drow_bracers_model_dmx
+        weight: 1
+      - path: drow_cape_model_dmx
+        weight: 1
+      - path: drow_haircowl_model_dmx
+        weight: 1
+      - path: drow_legs_model_dmx
+        weight: 1
+      - path: drow_model_dmx
+        weight: 1
+      - path: drow_model_dmx_skeleton
+        weight: 1
+      - path: drow_model_dmx_skeleton/root
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows2_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows4_0_B_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows5_0_B_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows6_0_C_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0/cape_R5C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1/cape_R5C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2/cape_R5C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/attach_bone
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L/Bow2_0_A_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R/Bow3_0_A_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L/index_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L/mid_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L/thumb_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/attach_attack2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R/index_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R/mid_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R/thumb_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1/head
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L/toeBase_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R/toeBase_R
+        weight: 1
+      - path: drow_quiver_model_dmx
+        weight: 1
+      - path: drow_shoulders_model_dmx
+        weight: 1
+      - path: drow_weapon_model_dmx
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: attack_frost_arrow
+      takeName: attack_frost_arrow
+      firstFrame: 0
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: drow_bracers_model_dmx
+        weight: 1
+      - path: drow_cape_model_dmx
+        weight: 1
+      - path: drow_haircowl_model_dmx
+        weight: 1
+      - path: drow_legs_model_dmx
+        weight: 1
+      - path: drow_model_dmx
+        weight: 1
+      - path: drow_model_dmx_skeleton
+        weight: 1
+      - path: drow_model_dmx_skeleton/root
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows2_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows4_0_B_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows5_0_B_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows6_0_C_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0/cape_R5C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1/cape_R5C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2/cape_R5C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/attach_bone
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L/Bow2_0_A_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R/Bow3_0_A_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L/index_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L/mid_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L/thumb_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/attach_attack2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R/index_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R/mid_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R/thumb_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1/head
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L/toeBase_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R/toeBase_R
+        weight: 1
+      - path: drow_quiver_model_dmx
+        weight: 1
+      - path: drow_shoulders_model_dmx
+        weight: 1
+      - path: drow_weapon_model_dmx
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: death
+      takeName: death
+      firstFrame: 0
+      lastFrame: 104
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: drow_bracers_model_dmx
+        weight: 1
+      - path: drow_cape_model_dmx
+        weight: 1
+      - path: drow_haircowl_model_dmx
+        weight: 1
+      - path: drow_legs_model_dmx
+        weight: 1
+      - path: drow_model_dmx
+        weight: 1
+      - path: drow_model_dmx_skeleton
+        weight: 1
+      - path: drow_model_dmx_skeleton/root
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows2_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows4_0_B_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows5_0_B_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows6_0_C_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0/cape_R5C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1/cape_R5C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2/cape_R5C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/attach_bone
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L/Bow2_0_A_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R/Bow3_0_A_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L/index_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L/mid_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L/thumb_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/attach_attack2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R/index_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R/mid_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R/thumb_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1/head
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L/toeBase_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R/toeBase_R
+        weight: 1
+      - path: drow_quiver_model_dmx
+        weight: 1
+      - path: drow_shoulders_model_dmx
+        weight: 1
+      - path: drow_weapon_model_dmx
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: idle
+      takeName: idle
+      firstFrame: 0
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: drow_bracers_model_dmx
+        weight: 1
+      - path: drow_cape_model_dmx
+        weight: 1
+      - path: drow_haircowl_model_dmx
+        weight: 1
+      - path: drow_legs_model_dmx
+        weight: 1
+      - path: drow_model_dmx
+        weight: 1
+      - path: drow_model_dmx_skeleton
+        weight: 1
+      - path: drow_model_dmx_skeleton/root
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows2_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows4_0_B_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows5_0_B_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows6_0_C_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0/cape_R5C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1/cape_R5C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2/cape_R5C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/attach_bone
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L/Bow2_0_A_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R/Bow3_0_A_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L/index_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L/mid_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L/thumb_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/attach_attack2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R/index_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R/mid_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R/thumb_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1/head
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L/toeBase_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R/toeBase_R
+        weight: 1
+      - path: drow_quiver_model_dmx
+        weight: 1
+      - path: drow_shoulders_model_dmx
+        weight: 1
+      - path: drow_weapon_model_dmx
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: idle_alt
+      takeName: idle_alt
+      firstFrame: 0
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: drow_bracers_model_dmx
+        weight: 1
+      - path: drow_cape_model_dmx
+        weight: 1
+      - path: drow_haircowl_model_dmx
+        weight: 1
+      - path: drow_legs_model_dmx
+        weight: 1
+      - path: drow_model_dmx
+        weight: 1
+      - path: drow_model_dmx_skeleton
+        weight: 1
+      - path: drow_model_dmx_skeleton/root
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows2_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows4_0_B_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows5_0_B_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows6_0_C_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0/cape_R5C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1/cape_R5C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2/cape_R5C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/attach_bone
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L/Bow2_0_A_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R/Bow3_0_A_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L/index_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L/mid_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L/thumb_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/attach_attack2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R/index_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R/mid_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R/thumb_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1/head
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L/toeBase_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R/toeBase_R
+        weight: 1
+      - path: drow_quiver_model_dmx
+        weight: 1
+      - path: drow_shoulders_model_dmx
+        weight: 1
+      - path: drow_weapon_model_dmx
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: run
+      takeName: run
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: drow_bracers_model_dmx
+        weight: 1
+      - path: drow_cape_model_dmx
+        weight: 1
+      - path: drow_haircowl_model_dmx
+        weight: 1
+      - path: drow_legs_model_dmx
+        weight: 1
+      - path: drow_model_dmx
+        weight: 1
+      - path: drow_model_dmx_skeleton
+        weight: 1
+      - path: drow_model_dmx_skeleton/root
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows2_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows4_0_B_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows5_0_B_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows6_0_C_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0/cape_R5C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1/cape_R5C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2/cape_R5C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/attach_bone
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L/Bow2_0_A_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R/Bow3_0_A_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L/index_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L/mid_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L/thumb_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/attach_attack2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R/index_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R/mid_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R/thumb_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1/head
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L/toeBase_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R/toeBase_R
+        weight: 1
+      - path: drow_quiver_model_dmx
+        weight: 1
+      - path: drow_shoulders_model_dmx
+        weight: 1
+      - path: drow_weapon_model_dmx
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: silence
+      takeName: silence
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: drow_bracers_model_dmx
+        weight: 1
+      - path: drow_cape_model_dmx
+        weight: 1
+      - path: drow_legs_model_dmx
+        weight: 1
+      - path: drow_model_dmx
+        weight: 1
+      - path: drow_model_dmx_skeleton
+        weight: 1
+      - path: drow_model_dmx_skeleton/root
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows2_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows4_0_B_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows5_0_B_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows6_0_C_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0/cape_R5C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1/cape_R5C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2/cape_R5C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/attach_bone
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L/Bow2_0_A_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R/Bow3_0_A_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L/index_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L/mid_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L/thumb_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/attach_attack2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R/index_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R/mid_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R/thumb_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1/head
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L/toeBase_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R/toeBase_R
+        weight: 1
+      - path: drow_quiver_model_dmx
+        weight: 1
+      - path: drow_shoulders_model_dmx
+        weight: 1
+      - path: drow_weapon_model_dmx
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: spawn
+      takeName: spawn
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: drow_bracers_model_dmx
+        weight: 1
+      - path: drow_cape_model_dmx
+        weight: 1
+      - path: drow_haircowl_model_dmx
+        weight: 1
+      - path: drow_legs_model_dmx
+        weight: 1
+      - path: drow_model_dmx
+        weight: 1
+      - path: drow_model_dmx_skeleton
+        weight: 1
+      - path: drow_model_dmx_skeleton/root
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows2_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows4_0_B_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows5_0_B_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows6_0_C_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0/cape_R5C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1/cape_R5C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2/cape_R5C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/attach_bone
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L/Bow2_0_A_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R/Bow3_0_A_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L/index_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L/mid_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L/thumb_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/attach_attack2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R/index_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R/mid_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R/thumb_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1/head
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L/toeBase_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R/toeBase_R
+        weight: 1
+      - path: drow_quiver_model_dmx
+        weight: 1
+      - path: drow_shoulders_model_dmx
+        weight: 1
+      - path: drow_weapon_model_dmx
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: stun
+      takeName: stun
+      firstFrame: 0
+      lastFrame: 64
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: drow_bracers_model_dmx
+        weight: 1
+      - path: drow_cape_model_dmx
+        weight: 1
+      - path: drow_haircowl_model_dmx
+        weight: 1
+      - path: drow_legs_model_dmx
+        weight: 1
+      - path: drow_model_dmx
+        weight: 1
+      - path: drow_model_dmx_skeleton
+        weight: 1
+      - path: drow_model_dmx_skeleton/root
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows2_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows4_0_B_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows5_0_B_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/Arrows6_0_C_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C0/cape_R1C0/cape_R2C0/cape_R3C0/cape_R4C0/cape_R5C0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C1/cape_R1C1/cape_R2C1/cape_R3C1/cape_R4C1/cape_R5C1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/cape_R0C2/cape_R1C2/cape_R2C2/cape_R3C2/cape_R4C2/cape_R5C2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/attach_bone
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow8_0_D_L/bow8_1_D_L/Bow2_0_A_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/Bow1_0/bow9_0_D_R/bow9_1_D_R/Bow3_0_A_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/index_0_L/index_1_L/index_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/mid_0_L/mid_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_L/bicep_L/elbow_L/wrist_L/thumb_0_L/thumb_1_L/thumb_2_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/attach_attack2
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/index_0_R/index_1_R/index_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/mid_0_R/mid_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/clavicle_R/bicep_R/elbow_R/wrist_R/thumb_0_R/thumb_1_R/thumb_2_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/spine1/spine2/spine3/neck1/head
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_L/knee_L/ankle_L/toeBase_L
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R
+        weight: 1
+      - path: drow_model_dmx_skeleton/root/thigh_R/knee_R/ankle_R/toeBase_R
+        weight: 1
+      - path: drow_quiver_model_dmx
+        weight: 1
+      - path: drow_shoulders_model_dmx
+        weight: 1
+      - path: drow_weapon_model_dmx
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: drow_bracers_model_dmx
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

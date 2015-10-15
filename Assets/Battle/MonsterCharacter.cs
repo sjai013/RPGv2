@@ -2,7 +2,8 @@
 
 namespace Battle
 {
-    public class MonsterCharacter : AbstractBattleCharacter {
+    public class MonsterCharacter : AbstractBattleCharacter
+    {
 
         // Use this for initialization
         void Start () {

@@ -16,13 +16,12 @@ namespace Battle.Targetter.NoWindow
         [SerializeField] protected GameObject _allyPointerPrefab;
         [SerializeField] protected GameObject _enemyPointerPrefab;
 
-        void Awake()
+        protected override void Initialise()
         {
-            base.Awake();
             AbstractAbility.AbilitySubmit += PrepareTargets;
         }
 
-        public override void PrepareTargets(AbstractAbility ability)
+        public override void PrepareTargets(AbstractActionAbility ability)
         {
             //Remove any existing pointers
             foreach (var item in _friendlyPointers)
@@ -72,20 +71,20 @@ namespace Battle.Targetter.NoWindow
                 SetButtonEvent(_enemyPointers[character], AbstractBattleCharacter.ActiveBattleCharacter, new List<AbstractBattleCharacter> { character }, ability);
             }
 
-            SelectFirst(ability,sortedFriendly,sortedEnemy);
+            SelectFirst(ability as AbstractActionAbility, sortedFriendly,sortedEnemy);
         }
 
-        private void SelectFirst(AbstractAbility ability, List<AbstractBattleCharacter> sortedFriendly, List<AbstractBattleCharacter> sortedEnemy)
+        private void SelectFirst(AbstractActionAbility ability, List<AbstractBattleCharacter> sortedFriendly, List<AbstractBattleCharacter> sortedEnemy)
         {
             switch (ability.DefaultTarget)
             {
-                case AbstractAbility.DefaultTargetType.Self:
+                case DefaultTargetType.Self:
                     _friendlyPointers[AbstractBattleCharacter.ActiveBattleCharacter].GetComponentInChildren<Button>().Select();
                     break;
-                case AbstractAbility.DefaultTargetType.Allies:
+                case DefaultTargetType.Allies:
                     _friendlyPointers[sortedFriendly[0]].GetComponentInChildren<Button>().Select();
                     break;
-                case AbstractAbility.DefaultTargetType.Enemy:
+                case DefaultTargetType.Enemy:
                     _enemyPointers[sortedEnemy[0]].GetComponentInChildren<Button>().Select();
                     break;
                 default:
@@ -124,9 +123,9 @@ namespace Battle.Targetter.NoWindow
         /// </summary>
         /// <param name="pointer">The pointer to configure.</param>
         /// <param name="character">Character the pointer belongs to</param>
-        /// <param name="sortedCharacterList">Sorted list of friendly or enemy characters (same group which CHARACTER belongs to).</param>
-        /// <param name="oppositePointers">Pointers for other group (i.e. if CHARACTER is friendly, then enemy pointer list).</param>
-        /// <param name="oppositeSortedCharacters">Sorted list for other group (i.e. if CHARACTER is friendly, then enemy characters list).</param>
+        /// <param name="sortedCharacterList">Sorted list of friendly or enemy characters (same group which [[CHARACTER]] belongs to).</param>
+        /// <param name="oppositePointers">Pointers for other group (i.e. if [[CHARACTER]] is friendly, then enemy pointer list).</param>
+        /// <param name="oppositeSortedCharacters">Sorted list for other group (i.e. if [[CHARACTER]] is friendly, then enemy characters list).</param>
         private void SetButtonNavigation(GameObject pointer, AbstractBattleCharacter character, List<AbstractBattleCharacter> sortedCharacterList, Dictionary<AbstractBattleCharacter, GameObject> oppositePointers, List<AbstractBattleCharacter> oppositeSortedCharacters)
         {
             var button = pointer.GetComponentInChildren<Button>();
@@ -138,10 +137,9 @@ namespace Battle.Targetter.NoWindow
             button.navigation = navigation;
         }
 
-        // For now assume single-target abilities only
-        private void SetButtonEvent(GameObject pointer, AbstractBattleCharacter caster, List<AbstractBattleCharacter> targets, AbstractAbility ability)
+        private void SetButtonEvent(GameObject pointer, AbstractBattleCharacter caster, List<AbstractBattleCharacter> targets, AbstractActionAbility ability)
         {
-            pointer.GetComponentInChildren<Button>().onClick.AddListener(delegate() {OnActionTargetSelected(caster,targets,ability);});
+            pointer.GetComponentInChildren<Button>().onClick.AddListener(delegate() {OnActionTargetSelected(caster,targets, ability);});
         }
     }
 }

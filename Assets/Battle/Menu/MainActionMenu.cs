@@ -24,6 +24,7 @@ namespace Battle.Menu
             _canvasGroup.interactable = true;
 
             //TODO: Code for loading menu based on actions character can actually perform.
+
             foreach (var ability in _abilities)
             {
                 Abilities.Add(ability);

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Battle.Abilities.Damage;
@@ -9,48 +10,26 @@ using UnityEngine.UI;
 
 namespace Battle.Abilities
 {
+
+
     [RequireComponent(typeof(Button))]
     public abstract  class AbstractAbility: MonoBehaviour, ISelectHandler, IDeselectHandler, ISubmitHandler
     {
-        public enum TargetTypes
-        {
-            Self,
-            OneFriendly,
-            OneEnemy,
-            OneEnemyOrFriendly,
-            AllFriendly,
-            AllEnemy,
-            AllFriendlyOrEnemy,
-            All
-        };
-
-        public enum DefaultTargetType
-        {
-            Self,
-            Allies,
-            Enemy
-        }
-
-
-        public abstract TargetTypes TargetType { get; }
         public abstract String Name { get; }
-        public abstract DefaultTargetType DefaultTarget { get; }
-        public abstract AbstractDamageBehaviour DamageBehaviour { get;  }
 
-        public virtual int ActionCost { get; protected set; }
+        public virtual int ActionCost { get; set; }
 
         public delegate void AbilityTargets(AbstractAbility ability, List<AbstractBattleCharacter> alliesAffected, List<AbstractBattleCharacter> enemiesAffected);
-        public delegate void Ability(AbstractAbility ability);
+        public delegate void ActionAbility(AbstractActionAbility ability);
 
         public static event AbilityTargets SelectedAbilityChanged;
-        public static event Ability AbilitySubmit;
+        public static event ActionAbility AbilitySubmit;
 
         private static Dictionary<String,AbstractAbility> _abilities = new Dictionary<String, AbstractAbility>();
 
         private static AbstractAbility _currentAbility;
 
-        public static AbstractAbility CurrentSelectedAbility
-        {
+        public static AbstractAbility CurrentSelectedAbility { 
             get
             {
                 return _currentAbility; 
@@ -105,18 +84,9 @@ namespace Battle.Abilities
             if (handler != null) handler(ability, null, null);
         }
 
-        public virtual void OnSubmit(BaseEventData eventData)
-        {
-            
-            Debug.Log("Bring up targetting window to select targets");
-            Debug.Log(this.name);
-            OnAbilitySubmit(this);
+        public abstract void OnSubmit(BaseEventData eventData);
 
-             _mainActionCanvasGroup.interactable = false;
-             _mainActionCanvasGroup.gameObject.SetActive(false);
-        }
-
-        protected static void OnAbilitySubmit(AbstractAbility ability)
+        protected static void OnAbilitySubmit(AbstractActionAbility ability)
         {
             var handler = AbilitySubmit;
             if (handler != null) handler(ability);

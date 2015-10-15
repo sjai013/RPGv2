@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Battle.Abilities.Damage;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,14 +11,7 @@ namespace Battle.Abilities
 
     public class Summon : AbstractAbilityContainer
     {
-        public override AbstractDamageBehaviour DamageBehaviour
-        {
-            get { throw new NotImplementedException(); }
-        }
-
-        public override int ActionCost { get { return 3; } }
+        public override int ActionCost { get { return 6; } }
         public override string Name { get { return "Summon"; } }
-        public override TargetTypes TargetType { get { throw new NotImplementedException(); } }
-        public override DefaultTargetType DefaultTarget { get { throw new NotImplementedException(); } }
     }
 }

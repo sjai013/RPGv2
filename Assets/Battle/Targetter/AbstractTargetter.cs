@@ -8,16 +8,19 @@ namespace Battle.Targetter
     public abstract class AbstractTargetter : MonoBehaviour
     {
         public delegate void BattleCharDelegate(AbstractBattleCharacter battleChar);
-        public delegate void ActionAbilityDelegate(AbstractBattleCharacter caster, List<AbstractBattleCharacter> target, AbstractAbility ability);
+        public delegate void ActionTargetDelegate(AbstractBattleCharacter caster, List<AbstractBattleCharacter> target, AbstractActionAbility ability);
         public event BattleCharDelegate TargetChange;
-        public event ActionAbilityDelegate ActionTargetSelected;
+        public static event ActionTargetDelegate ActionTargetSelected;
 
-        public abstract void PrepareTargets(AbstractAbility ability);
+        public abstract void PrepareTargets(AbstractActionAbility abstractActionAbility);
 
-        protected virtual void Awake()
+        void Awake()
         {
             AbstractBattleCharacter.TargettingSystem = this;
+            Initialise();
         }
+
+        protected abstract void Initialise();
 
         protected virtual void OnTargetChange(AbstractBattleCharacter battlechar)
         {
@@ -25,11 +28,12 @@ namespace Battle.Targetter
             if (handler != null) handler(battlechar);
         }
 
-        protected virtual void OnActionTargetSelected(AbstractBattleCharacter caster, List<AbstractBattleCharacter> targets, AbstractAbility ability)
+        protected virtual void OnActionTargetSelected(AbstractBattleCharacter caster, List<AbstractBattleCharacter> targets, AbstractActionAbility ability)
         {
             var handler = ActionTargetSelected;
             if (handler != null) handler(caster, targets, ability);
         }
+
     }
 
 
