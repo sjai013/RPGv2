@@ -9,20 +9,33 @@ using UnityEngine.UI;
 
 namespace Battle.Targetter.NoWindow
 {
-    public class NoWindowTargetter : AbstractTargetter
+    public sealed class NoWindowTargetter : AbstractTargetter
     {
         private Dictionary<AbstractBattleCharacter, GameObject> _friendlyPointers = new Dictionary<AbstractBattleCharacter, GameObject>();
         private Dictionary<AbstractBattleCharacter, GameObject> _enemyPointers = new Dictionary<AbstractBattleCharacter, GameObject>();
-        [SerializeField] protected GameObject _allyPointerPrefab;
-        [SerializeField] protected GameObject _enemyPointerPrefab;
+        [SerializeField] private GameObject _allyPointerPrefab;
+        [SerializeField] private GameObject _enemyPointerPrefab;
+
+        protected override void InitiateTargetting(AbstractAbility ability)
+        {
+            PrepareTargets(ability as AbstractActionAbility);
+        }
 
         protected override void Initialise()
         {
-            AbstractAbility.AbilitySubmit += PrepareTargets;
+            //TODO: FIX
+           // AbstractAbility.AbilitySubmit += PrepareTargets;
+        }
+
+        public override string Identifier
+        {
+            get { return "No Window Targetter"; }
         }
 
         public override void PrepareTargets(AbstractActionAbility ability)
         {
+            if (ability == null) return;
+
             //Remove any existing pointers
             foreach (var item in _friendlyPointers)
             {
@@ -131,7 +144,6 @@ namespace Battle.Targetter.NoWindow
             var button = pointer.GetComponentInChildren<Button>();
             Navigation navigation = new Navigation {mode = Navigation.Mode.Explicit};
             navigation.selectOnUp = navigation.selectOnDown = navigation.selectOnUp = navigation.selectOnDown = oppositePointers[oppositeSortedCharacters[0]].GetComponentInChildren<Button>();
-            // oppositePointers[sortedCharacterList[0]].GetComponentInChildren<Button>();
             navigation.selectOnLeft = ToLeft(character, sortedCharacterList).GetComponentInChildren<Button>();
             navigation.selectOnRight = ToRight(character, sortedCharacterList).GetComponentInChildren<Button>();
             button.navigation = navigation;
@@ -139,7 +151,7 @@ namespace Battle.Targetter.NoWindow
 
         private void SetButtonEvent(GameObject pointer, AbstractBattleCharacter caster, List<AbstractBattleCharacter> targets, AbstractActionAbility ability)
         {
-            pointer.GetComponentInChildren<Button>().onClick.AddListener(delegate() {OnActionTargetSelected(caster,targets, ability);});
+            pointer.GetComponentInChildren<Button>().onClick.AddListener(delegate() {OnActionTargetSubmitted(caster,targets, ability);});
         }
     }
 }

@@ -1,14 +1,22 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Battle.Abilities.Damage;
+using UnityEngine;
+
 
 namespace Battle.Abilities
 {
-
-    public class Item : AbstractAbilityContainer
+    public class Item : AbilityContainer
     {
-        public override int ActionCost { get { return 2; } }
-        public override string Name { get { return "Item"; } }
+        private const String _name = "Item";
+        private static int _actionCost = 2;
+        private static AbilityType _abilityType = AbilityType.Container | AbilityType.Base;
+
+        public Item() : base(_name, _actionCost, _abilityType)
+        {
+        }
+
+        protected override void DoAction()
+        {
+            Debug.Log(Name);
+        }
     }
 }

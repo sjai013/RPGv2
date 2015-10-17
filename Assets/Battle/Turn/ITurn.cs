@@ -8,11 +8,6 @@ namespace Battle.Turn
     public delegate void NoReturnDelegate();
     public interface ITurn
     {
-        /// <summary>
-        /// Raised when it is a character's turn.  Function signature is void (AbstractBattleChar), 
-        /// where the AbstractBattleChar contains information on which character is to move.
-        /// </summary>
-        event BattleCharDelegate TakeAction;
         AbstractBattleCharacter Character { get; set; }
 
         /// <summary>

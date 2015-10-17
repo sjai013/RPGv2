@@ -1,95 +1,100 @@
-﻿using UnityEngine;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Battle.Abilities.Damage;
-using Battle.Menu;
-using UnityEngine.EventSystems;
+using System.Linq;
+using Battle.Abilities;
 using UnityEngine.UI;
 
 namespace Battle.Abilities
 {
-
-
-    [RequireComponent(typeof(Button))]
-    public abstract  class AbstractAbility: MonoBehaviour, ISelectHandler, IDeselectHandler, ISubmitHandler
+    /// <summary>
+    /// Determines where the ability type is drawn
+    /// </summary>
+    [Flags]
+    public enum AbilityType
     {
-        public abstract String Name { get; }
+        /// <summary>
+        /// Nothing
+        /// </summary>
+        None = 0,
 
-        public virtual int ActionCost { get; set; }
+        /// <summary>
+        /// Appear in main menu
+        /// </summary>
+        Base = 1 << 0,
 
-        public delegate void AbilityTargets(AbstractAbility ability, List<AbstractBattleCharacter> alliesAffected, List<AbstractBattleCharacter> enemiesAffected);
-        public delegate void ActionAbility(AbstractActionAbility ability);
+        /// <summary>
+        /// Performs action
+        /// </summary>
+        Action = 1 << 1,
 
-        public static event AbilityTargets SelectedAbilityChanged;
-        public static event ActionAbility AbilitySubmit;
+        /// <summary>
+        /// Opens a sub-menu when selected
+        /// </summary>
+        Container = 1 << 2,
 
-        private static Dictionary<String,AbstractAbility> _abilities = new Dictionary<String, AbstractAbility>();
+        /// <summary>
+        /// Shows up in the Summon submenu
+        /// </summary>
+        Summon = 1 << 3,
 
-        private static AbstractAbility _currentAbility;
+        /// <summary>
+        /// Shows up in the Skill submenu
+        /// </summary>
+        Skill = 1 << 4,
 
-        public static AbstractAbility CurrentSelectedAbility { 
-            get
-            {
-                return _currentAbility; 
-                
-            }
+        /// <summary>
+        /// Shows up in the Special submenu
+        /// </summary>
+        Special = 1 << 5,
 
-            protected set
-            {
-                if (_currentAbility == value)
-                    return;
+        /// <summary>
+        /// Shows up in the WhtMgc submenu
+        /// </summary>
+        WhiteMagic = 1 << 6,
 
-                _currentAbility = value;
-                if (value == null) return;
-                value.OnSelectedAbilityChanged(value);
-            }
+        /// <summary>
+        /// Shows up in the BlkMgc submenu
+        /// </summary>
+        BlackMagic = 1 << 7,
+
+        /// <summary>
+        /// Shows up in the Item submenu
+        /// </summary>
+        Item = 1 << 8, 
+    }
+
+    public abstract class AbstractAbility
+    {
+        public AbilityType AbilityType { get; private set; }
+        public AbilityButton AbilityButton { get { return null; } set { value.AbilitySubmitted += DoAction;} }
+        public String Name { get; private set; }
+        public int ActionCost { get; private set; }
+
+        protected AbstractAbility(string name, int actionCost, AbilityType abilityType)
+        {
+            this.Name = name;
+            this.ActionCost = actionCost;
+            this.AbilityType = abilityType;
         }
 
-        [SerializeField] private GameObject _pointer;
-        [SerializeField] protected CanvasGroup _mainActionCanvasGroup;
+        protected abstract void DoAction();
 
-        private Button _button;
 
-        void Awake()
+        public override string ToString()
         {
-            _abilities.Add(this.Name,this);
-            _button = GetComponent<Button>();
-
+            return Name;
         }
+    }
+}
 
-        public void Select()
+namespace ExtensionMethods
+{
+    public static class AbilityExtensions
+    {
+        public static List<T> FilterAbilities<T>(this List<T> list, AbilityType abilityType) where T : AbstractAbility
         {
-            OnSelect(null);
-        }
-
-        public void OnSelect(BaseEventData eventData)
-        {
-            _button.OnSelect(eventData);
-            _pointer.SetActive(true);            
-            CurrentSelectedAbility = this;
-        }
-
-        public void OnDeselect(BaseEventData eventData)
-        {
-
-            _pointer.SetActive(false);
-            CurrentSelectedAbility = null;
-        }
-
-        protected virtual void OnSelectedAbilityChanged(AbstractAbility ability)
-        {
-            var handler = SelectedAbilityChanged;
-            if (handler != null) handler(ability, null, null);
-        }
-
-        public abstract void OnSubmit(BaseEventData eventData);
-
-        protected static void OnAbilitySubmit(AbstractActionAbility ability)
-        {
-            var handler = AbilitySubmit;
-            if (handler != null) handler(ability);
+            List<T> abilities = list.Where(item => (item.AbilityType & abilityType) != 0).ToList();
+            return abilities;
         }
 
     }

@@ -1,13 +1,13 @@
 fileFormatVersion: 2
 guid: ce4a3c2febdb982428d3ab6093becdac
-timeCreated: 1444107804
+timeCreated: 1444971145
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: character_icons_0
     21300002: Icon_Yuna
     21300004: Icon_Tidus
-    21300006: Icon_Lulu
+    21300006: Icon_Drow
     21300008: Monster
   serializedVersion: 2
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Icon_Lulu
+    - name: Icon_Drow
       rect:
         serializedVersion: 2
         x: 177

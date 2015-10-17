@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 namespace ExtensionMethods
@@ -7,7 +9,7 @@ namespace ExtensionMethods
     
     public static class ExtensionMethods
     {
-        static System.Random rand = new System.Random(Guid.NewGuid().GetHashCode());
+        static readonly System.Random Rand = new System.Random(Guid.NewGuid().GetHashCode());
 
         /// <summary>
         /// Fade in/out a CanvasGroup object
@@ -54,8 +56,22 @@ namespace ExtensionMethods
 
         public static Boolean ToRandom(this float x)
         {
-            bool result = rand.NextDouble() < x;
+            bool result = Rand.NextDouble() < x;
             return result;
         }
+
+        public static String PrintList<T>(this List<T> list)
+        {
+            var sb = new StringBuilder();
+
+            foreach (var item in list)
+            {
+                sb.Append(item.ToString()+'\n');
+            }
+
+            return sb.ToString();
+
+        }
+
     }
 }

@@ -8,16 +8,11 @@ namespace Battle.Turn
     /// </summary>
     public class Ticks : ITurn
     {
-
-        public event BattleCharDelegate TakeAction;
         public AbstractBattleCharacter Character { get; set; }
 
         public bool IncrementTime()
         {
-            if (--RecoveryTime != 0) return false;
-
-            OnTakeAction(Character);
-            return true;
+            return --RecoveryTime == 0;
         }
 
         /// <summary>
@@ -105,12 +100,6 @@ namespace Battle.Turn
             RecoveryTime -= ticks;
         }
 
-
-        protected virtual void OnTakeAction(AbstractBattleCharacter character)
-        {
-            var handler = TakeAction;
-            if (handler != null) handler(character);
-        }
     }
 
 }

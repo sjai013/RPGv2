@@ -1,8 +1,10 @@
 ﻿
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Remoting.Messaging;
+using Battle.Abilities.AnimationBehaviour;
 using Battle.Abilities.Damage;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,34 +15,22 @@ namespace Battle.Abilities
 
     public class Attack : AbstractActionAbility
     {
-        public Attack()
+        private const String _name = "Attack";
+        private static int _actionCost = 3;
+        private static AbilityType _abilityType = AbilityType.Action | AbilityType.Base;
+        private static TargetTypes _targetTypes = TargetTypes.OneEnemyOrFriendly;
+        private static DefaultTargetType _defaultTargetType = DefaultTargetType.Enemy;
+        private static AbstractAnimationBehaviour animationBehaviour = new NormalAttackBehaviour();
+
+        public Attack() : 
+            base(_name, _actionCost, _abilityType, _targetTypes, _defaultTargetType, animationBehaviour)
         {
-            DamageBehaviour = new List<AbstractDamageBehaviour>
-            {
-                new PhysicalDamageBehaviour(16)
-            };
+
         }
 
-        protected override sealed List<AbstractDamageBehaviour> DamageBehaviour { get; set; }
-
-        protected IEnumerator SequenceAction(AbstractBattleCharacter caster, AbstractBattleCharacter target)
+        protected override void DoAction()
         {
-            //REPLACE THIS WITH A DEDICATED ANIMATION CLASS?
-
-            //TODO: Animate caster moving in for attack
-
-            Debug.Log(DamageBehaviour[0].DoDamage(caster, target));
-
-            //TODO: Animate target taking damage
-
-            yield break;
+            Debug.Log("Submitted: " + Name + ".");
         }
-
-        public override int ActionCost { get { return 3; }  }
-
-        public override string Name { get {return "Attack";} }
-        public override TargetTypes TargetType { get {return TargetTypes.OneEnemyOrFriendly;} }
-        public override DefaultTargetType DefaultTarget { get { return DefaultTargetType.Enemy; } }
-
     }
 }

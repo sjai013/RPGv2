@@ -15,8 +15,11 @@ namespace Battle
     /// <summary>
     /// Class for managing all characters which can take action (i.e. player, monsters)
     /// </summary>
+    [RequireComponent(typeof(Animator))]
     public abstract class AbstractBattleCharacter: MonoBehaviour
     {
+        public AnimationParameters AnimParameters { get; private set; }
+
         /// <summary>
         /// General stats, such as character name.
         /// </summary>
@@ -30,55 +33,12 @@ namespace Battle
         public Stats Stats { get { return _stats; } }
         [SerializeField] protected Stats _stats;
 
-        /// <summary>
-        /// Defines the TurnSystem used.
-        /// </summary>
-        private ITurn _turnSystem;
-        public ITurn TurnSystem { get { return _turnSystem; }
-            set
-            {
-                if (_turnSystem == null)
-                {
-                    _turnSystem = value;
-                    InitialiseTurnSystem(TurnSystem);
-                }
-                else
-                {
-                    Debug.LogError("Attempting to assign multiple Turn Systems.");
-                }
-            }
-        }
 
-        private static AbstractTargetter _targettingSystem;
-        public static AbstractTargetter TargettingSystem
-        {
-            get { return _targettingSystem; }
-            set
-            {
-                if (_targettingSystem == null)
-                {
-                    _targettingSystem = value;
-                    InitialiseTargettingSystem(TargettingSystem);
-                }
-                else
-                {
-                    Debug.LogError("Attempting to assign multiple Targetting Systems.");
-                }
-            }
-        }
+        private List<AbstractAbility> knownAbilities = new List<AbstractAbility>() {new Attack(), new Item()};
 
-        protected virtual void InitialiseTurnSystem(ITurn turnSystem)
-        {
-            turnSystem.TakeAction += TakeAction;
-        }
+        public List<AbstractAbility> Abilities { get { return knownAbilities; } }
 
-        protected static void InitialiseTargettingSystem(AbstractTargetter targettingSystem)
-        {
-            
-        }
-
-
-        /// <summary>
+            /// <summary>
         /// Boolean to indicate whether character is in combat (i.e. it could be on the "side-benches").
         /// </summary>
         [SerializeField] protected Boolean _inCombat;
@@ -164,6 +124,19 @@ namespace Battle
                 Debug.Log("Unknown character allegiance");
             }
 
+            RegisterEventHandlers();
+            AnimParameters = new AnimationParameters(GetComponent<Animator>());
+
+        }
+
+        private void RegisterEventHandlers()
+        {
+            AbstractTurnSystem.TurnSystem.TakeAction += SetActiveCharacter;
+        }
+
+        private static void SetActiveCharacter(AbstractBattleCharacter thisbattlecharacter)
+        {
+            ActiveBattleCharacter = thisbattlecharacter;
         }
 
         public bool IsFriendly()
@@ -242,6 +215,11 @@ namespace Battle
 
         public abstract void Highlight();
         public abstract void Unhighlight();
+
+        public override string ToString()
+        {
+            return General.Name;
+        }
     }
 
 }

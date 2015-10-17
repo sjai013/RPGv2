@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using Battle.Abilities.AnimationBehaviour;
-using Battle.Abilities.Damage;
 using Battle.Targetter;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Battle.Abilities
 {
+
     public enum TargetTypes
     {
         Self,
@@ -29,35 +28,18 @@ namespace Battle.Abilities
 
     public abstract class AbstractActionAbility : AbstractAbility
     {
-        public abstract TargetTypes TargetType { get; }
-        public abstract DefaultTargetType DefaultTarget { get; }
-        protected abstract List<AbstractDamageBehaviour> DamageBehaviour { get; set; }
-
-        private AbstractAnimationBehaviour casterAnimationBehaviour;
-        private AbstractAnimationBehaviour targetAnimationBehaviour;
-
-
-        public override void OnSubmit(BaseEventData eventData)
+        public TargetTypes TargetType { get; private set; }
+        public DefaultTargetType DefaultTarget { get; private set; }
+        public AbstractAnimationBehaviour AnimationBehaviour { get; private set; }
+  
+        protected AbstractActionAbility(String name, int actionCost, AbilityType abilityType, TargetTypes targetTypes,
+            DefaultTargetType defaultTarget, AbstractAnimationBehaviour animBehaviour) : base(name, actionCost, abilityType)
         {
-            Debug.Log("Bringing up targetting window to select targets");
-            Debug.Log(this.name);
-            OnAbilitySubmit(this);
-
-            AbstractTargetter.ActionTargetSelected += DoAbilityAnimation;
-
-            _mainActionCanvasGroup.interactable = false;
-            _mainActionCanvasGroup.gameObject.SetActive(false);
-
-            //TODO: New class to define actions after target is selected (Ability class shouldn't define action, but should register to this new class?)
+            this.TargetType = targetTypes;
+            this.DefaultTarget = defaultTarget;
+            abilityType |= AbilityType.Action;
+            this.AnimationBehaviour = animBehaviour;
         }
 
-        private void DoAbilityAnimation(AbstractBattleCharacter caster, List<AbstractBattleCharacter> target, AbstractActionAbility ability)
-        {
-            AbstractTargetter.ActionTargetSelected -= DoAbilityAnimation;
-            Debug.Log(caster + " " + target[0] + " " + ability);
-
-            throw new System.NotImplementedException();
-            
-        }
     }
 }

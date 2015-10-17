@@ -8,7 +8,6 @@ namespace Battle
 {
     public class PlayableCharacter : AbstractBattleCharacter
     {
-        public static event BattleChar BeginTurn;
 
         protected void Start()
         {
@@ -20,7 +19,6 @@ namespace Battle
         protected override void TakeAction(AbstractBattleCharacter character)
         {        
             base.TakeAction(character);
-            OnBeginTurn(character);
             Debug.Log(General.Name + " performing action.");
         }
 
@@ -34,10 +32,5 @@ namespace Battle
             throw new System.NotImplementedException();
         }
 
-        protected virtual void OnBeginTurn(AbstractBattleCharacter thisbattlecharacter)
-        {
-            var handler = BeginTurn;
-            if (handler != null) handler(thisbattlecharacter);
-        }
     }
 }
