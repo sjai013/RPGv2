@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Battle.Abilities;
+using Battle.Events.Abilities;
+using JainEventAggregator;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Battle.Abilities
@@ -63,10 +66,10 @@ namespace Battle.Abilities
         Item = 1 << 8, 
     }
 
-    public abstract class AbstractAbility
+    public abstract class AbstractAbility: IListener<AbilitySubmitted>
     {
         public AbilityType AbilityType { get; private set; }
-        public AbilityButton AbilityButton { get { return null; } set { value.AbilitySubmitted += DoAction;} }
+        public AbilityButton AbilityButton { get { return null; } set {} }
         public String Name { get; private set; }
         public int ActionCost { get; private set; }
 
@@ -75,10 +78,17 @@ namespace Battle.Abilities
             this.Name = name;
             this.ActionCost = actionCost;
             this.AbilityType = abilityType;
+            this.RegisterAllListeners();
         }
 
         protected abstract void DoAction();
 
+
+        public void Handle(AbilitySubmitted message)
+        {
+            if (message.Ability != this) return;
+            DoAction();
+        }
 
         public override string ToString()
         {

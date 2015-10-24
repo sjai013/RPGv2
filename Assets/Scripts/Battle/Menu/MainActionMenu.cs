@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
 using Battle.Abilities;
+using Battle.Events.Abilities;
 using ExtensionMethods;
+using JainEventAggregator;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Battle.Menu
 {
     [RequireComponent(typeof(CanvasGroup))]
-    sealed class MainActionMenu : AbstractActionMenu
+    sealed class MainActionMenu : AbstractActionMenu, IListener<AbilitySubmitted>
     {
         private static MainActionMenu instance;
         
@@ -21,10 +23,10 @@ namespace Battle.Menu
             }
 
             instance = this;
-            AbilityButton.AnAbilitySubmitted += FadeMenu;
+            this.RegisterAllListeners();
         }
 
-        private void FadeMenu(AbstractAbility ability)
+        private void FadeMenu()
         {
             StartCoroutine(_canvasGroup.Fade(1.0f, 0.0f, 0.15f, HideMenu));
         }
@@ -60,6 +62,10 @@ namespace Battle.Menu
         {
             instance.gameObject.SetActive(false);    
         }
-        
+
+        public void Handle(AbilitySubmitted message)
+        {
+            FadeMenu();
+        }
     }
 }

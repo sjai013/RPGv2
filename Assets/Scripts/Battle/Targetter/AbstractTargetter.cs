@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Battle.Abilities;
+using Battle.Events.Abilities;
 using Battle.Events.BattleCharacter;
 using Battle.Events.Targetting;
 using JainEventAggregator;
@@ -9,7 +10,7 @@ using UnityEngine.UI;
 
 namespace Battle.Targetter
 {
-    public abstract class AbstractTargetter : MonoBehaviour, IListener<SubmitAbilityAtTarget>
+    public abstract class AbstractTargetter : MonoBehaviour, IListener<AbilitySubmitted>, IListener<SubmitAbilityAtTarget>
     {
         public static AbstractTargetter TargettingSystem;
 
@@ -30,9 +31,7 @@ namespace Battle.Targetter
                 Debug.Log("Loading targetting System: " + Identifier + ".");
                 TargettingSystem = this;
                 Initialise();
-
                 this.RegisterAllListeners();
-                AbilityButton.AnAbilitySubmitted += InitiateTargetting;
             }
         }
 
@@ -56,6 +55,11 @@ namespace Battle.Targetter
         {
             this.Targets = message.Targets;
             EventAggregator.RaiseEvent(new CharacterAnimating() {Ability = message.Ability, Caster = message.Caster, Targets = message.Targets});
+        }
+
+        public void Handle(AbilitySubmitted message)
+        {
+            PrepareTargets(message.Ability as AbstractActionAbility);
         }
     }
 

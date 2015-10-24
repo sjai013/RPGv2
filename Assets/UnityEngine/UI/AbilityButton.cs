@@ -18,13 +18,8 @@ namespace UnityEngine.UI
         
 
         public delegate void AbilityDelegate(AbstractAbility ability);
-        public delegate void Action();
-
-        //public static event AbilityDelegate SelectedAbilityChanged;
-        public static event AbilityDelegate AnAbilitySubmitted;
-        public event Action AbilitySubmitted;
+        //public delegate void Action();
         
-
         void SetAbility (AbstractAbility ability)
         {
             _ability = ability;
@@ -45,21 +40,10 @@ namespace UnityEngine.UI
 
         public void OnSubmit(BaseEventData eventData)
         {
-            OnAbilitySubmitted();
-            OnAnAbilitySubmitted(Ability);
+            EventAggregator.RaiseEvent(new AbilitySubmitted() {Ability = Ability});
         }
 
-        private void OnAbilitySubmitted()
-        {
-            var handler = AbilitySubmitted;
-            if (handler != null) handler();
-        }
 
-        private static void OnAnAbilitySubmitted(AbstractAbility ability)
-        {
-            var handler = AnAbilitySubmitted;
-            if (handler != null) handler(ability);
-        }
 
     }
 }
