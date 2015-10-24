@@ -3,8 +3,11 @@ using System.Collections;
 using Battle;
 using UnityEngine.UI;
 using System;
+using Battle.Events.BattleCharacter;
+using Battle.Events.BattleCharacter.Stats;
+using JainEventAggregator;
 
-public class PlayerStatus : MonoBehaviour
+public class PlayerStatus : MonoBehaviour, IListener<HpChanged>, IListener<MpChanged>, IListener<HighlightBattleCharacter>
 {
     [SerializeField] private AbstractBattleCharacter _character;
     [SerializeField] private Text _name;
@@ -38,22 +41,19 @@ public class PlayerStatus : MonoBehaviour
         _character.RefreshHandlers();
     }
 
+    void OnDestroy()
+    {
+        this.UnregisterAllListeners();
+    }
+
     void RegisterEventHandlers(AbstractBattleCharacter battleCharacter)
     {
-        _character.Stats.HpChanged += UpdateHp;
-        _character.Stats.MpChanged += UpdateMp;
-        _character.Stats.HpCritical += HpCritical;
-        _character.HighlightEvent += HighlightEventThis;
-        _character.UnhighlightEvent += UnhighlightEventThis;
+        this.RegisterAllListeners();
     }
 
     void UnregisterEventHandlers(AbstractBattleCharacter battleCharacter)
     {
-        _character.Stats.HpChanged -= UpdateHp;
-        _character.Stats.MpChanged -= UpdateMp;
-        _character.Stats.HpCritical -= HpCritical;
-        _character.HighlightEvent -= HighlightEventThis;
-        _character.UnhighlightEvent -= UnhighlightEventThis;
+        this.UnregisterAllListeners();
     }
 
 
@@ -73,43 +73,71 @@ public class PlayerStatus : MonoBehaviour
         _name.text = value.ToString();
     }
 
-    void UpdateHp(int value)
+    void UpdateHp(HpChanged value)
     {
-        _hpText.text = value.ToString();
-    }
+        _hpText.text = value.Hp.ToString();
 
-    void UpdateMp(int value)
-    {
-        _mpText.text = value.ToString();
-    }
-
-    void HpCritical(bool value)
-    {
-        _hpText.color = new Color(1, 1, 1);
-        _name.color = new Color(1,1,1);
-        if (value)
+        switch (value.State)
         {
-            _hpText.color = new Color(1,1,0);
-            _name.color = new Color(1,1,0);
+            case HpChanged.EState.Critical:
+                _hpText.color = new Color(1, 1, 0);
+                _name.color = new Color(1, 1, 0);
+                break;
+            case HpChanged.EState.Dead:
+                _hpText.color = new Color(1, 0, 0);
+                _name.color = new Color(1, 0, 0);
+                break;
+            case HpChanged.EState.None:
+                _hpText.color = new Color(1, 1, 1);
+                _name.color = new Color(1, 1, 1);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 
-    void HighlightEventThis(AbstractBattleCharacter battleCharacter)
+
+    private void UpdateMp(MpChanged value)
     {
-        if (battleCharacter == (AbstractBattleCharacter) _character)
+        _mpText.text = value.Mp.ToString();
+
+        switch (value.State)
         {
-            _highlightImageGameObject.SetActive(true);
+            case MpChanged.EState.None:
+                _mpText.color = new Color(1,1,1);
+                break;
+            case MpChanged.EState.Critical:
+                _mpText.color = new Color(1,1,0);
+                break;
+            case MpChanged.EState.Empty:
+                _mpText.color = new Color(1,0,0);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
-        
     }
 
-    void UnhighlightEventThis(AbstractBattleCharacter battleCharacter)
+
+    public void Handle(HighlightBattleCharacter message)
     {
-        if (battleCharacter == (AbstractBattleCharacter)_character)
+        if (message.BattleCharacter != this.Character) return;
+        _highlightImageGameObject.SetActive(message.Highlighted);
+    }
+
+    public void Handle(HpChanged message)
+    {
+        if (message.BattleCharacter == _character)
         {
-            _highlightImageGameObject.SetActive(false);
+            UpdateHp(message);
         }
     }
 
+    public void Handle(MpChanged message)
+    {
+        if (message.BattleCharacter == _character)
+        {
+            UpdateMp(message);
+        }
+    }
 
 }
