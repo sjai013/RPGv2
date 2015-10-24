@@ -4,7 +4,7 @@ using System.Linq;
 using Battle.Abilities;
 using Battle.Abilities.Damage;
 using Battle.Events.BattleCharacter;
-using Battle.Events.BattleCharacter.Turns;
+using Battle.Events.TurnSystem;
 using JainEventAggregator;
 using UnityEngine;
 

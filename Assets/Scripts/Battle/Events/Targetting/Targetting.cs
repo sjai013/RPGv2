@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Battle.Abilities;
 
-namespace Battle.Events.BattleCharacter.Targetting
+namespace Battle.Events.Targetting
 {
     public class TargetChanged
     {

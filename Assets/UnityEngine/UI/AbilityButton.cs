@@ -1,4 +1,6 @@
 ﻿using Battle.Abilities;
+using Battle.Events.Abilities;
+using JainEventAggregator;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
@@ -8,7 +10,7 @@ namespace UnityEngine.UI
 
     [RequireComponent(typeof(Button))]
     public class AbilityButton : MonoBehaviour, ISelectHandler, IDeselectHandler, ISubmitHandler
-    {
+        {
         [SerializeField] private Text _buttonText;
         [SerializeField] private GameObject _pointer;
         private AbstractAbility _ability;
@@ -18,7 +20,7 @@ namespace UnityEngine.UI
         public delegate void AbilityDelegate(AbstractAbility ability);
         public delegate void Action();
 
-        public static event AbilityDelegate SelectedAbilityChanged;
+        //public static event AbilityDelegate SelectedAbilityChanged;
         public static event AbilityDelegate AnAbilitySubmitted;
         public event Action AbilitySubmitted;
         
@@ -33,8 +35,7 @@ namespace UnityEngine.UI
         public void OnSelect(BaseEventData eventData)
         {
             _pointer.SetActive(true);
-            OnSelectedAbilityChanged(Ability);
-
+            EventAggregator.RaiseEvent(new HighlightedAbilityChanged {Ability = this.Ability});
         }
 
         public void OnDeselect(BaseEventData eventData)
@@ -48,12 +49,6 @@ namespace UnityEngine.UI
             OnAnAbilitySubmitted(Ability);
         }
 
-        private static void OnSelectedAbilityChanged(AbstractAbility ability)
-        {
-            var handler = SelectedAbilityChanged;
-            if (handler != null) handler(ability);
-        }
-
         private void OnAbilitySubmitted()
         {
             var handler = AbilitySubmitted;
@@ -65,5 +60,6 @@ namespace UnityEngine.UI
             var handler = AnAbilitySubmitted;
             if (handler != null) handler(ability);
         }
+
     }
 }

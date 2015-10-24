@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Battle.Abilities;
-using Battle.Events.BattleCharacter.Turns;
+using Battle.Events.TurnSystem;
 using Battle.Turn;
 using ExtensionMethods;
 using JainEventAggregator;

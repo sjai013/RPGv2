@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using Battle.Abilities;
 using Battle.Events.BattleCharacter;
-using Battle.Events.BattleCharacter.Targetting;
-using ExtensionMethods;
+using Battle.Events.Targetting;
 using JainEventAggregator;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,6 +42,7 @@ namespace Battle.Targetter
 
         protected virtual void OnTargetChange(AbstractBattleCharacter battlechar)
         {
+            //TODO: Where should OnTargetChange be called?  Need something like an OnSelect for pointer
             EventAggregator.RaiseEvent(new TargetChanged() {Caster = AbstractBattleCharacter.ActiveBattleCharacter, Target = battlechar});
         }
 

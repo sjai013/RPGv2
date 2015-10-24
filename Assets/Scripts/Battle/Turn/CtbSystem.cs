@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using Battle.Abilities;
-using Battle.Events.BattleCharacter.Turns;
+using Battle.Events.Abilities;
+using Battle.Events.Targetting;
+using Battle.Events.TurnSystem;
 using ExtensionMethods;
 using JainEventAggregator;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Battle.Turn
 {
@@ -16,12 +17,14 @@ namespace Battle.Turn
     /// Manages drawing of turn previews.
     /// </summary>
     [RequireComponent(typeof(CanvasGroup))]
-    public class CtbSystem : AbstractTurnSystem
+    public class CtbSystem : AbstractTurnSystem, IListener<HighlightedAbilityChanged>, IListener<TargetChanged>
     {
         [SerializeField] private GameObject _content;
         [SerializeField] private GameObject _turnIndicator;
         [SerializeField] private List<TurnDisplay> _turnDisplays;
-        Dictionary<AbstractBattleCharacter,Ticks> _tickSystems = new Dictionary<AbstractBattleCharacter, Ticks>(); 
+        Dictionary<AbstractBattleCharacter,Ticks> _tickSystems = new Dictionary<AbstractBattleCharacter, Ticks>();
+
+        private AbstractAbility _ability;
 
         private CanvasGroup _canvasGroup;
         private List<KeyValuePair<AbstractBattleCharacter, int>> _prevTurns = new List<KeyValuePair<AbstractBattleCharacter, int>>(0);
@@ -32,14 +35,15 @@ namespace Battle.Turn
 
         protected override void Initialise()
         {
-           
+            this.RegisterAllListeners();
             _canvasGroup = GetComponent<CanvasGroup>();
-            AbilityButton.SelectedAbilityChanged += ability => { UpdatePreview(ability,null,null); };
+
         }
 
         void Start()
         {
-            
+
+
             foreach (var character in AbstractBattleCharacter.Characters)
             {
                 _tickSystems[character] = new Ticks(character);
@@ -47,6 +51,11 @@ namespace Battle.Turn
             }
 
             StartCoroutine(UpdateTurns(AbstractBattleCharacter.Characters));
+        }
+
+        void Update()
+        {
+            
         }
 
         IEnumerator UpdateTurns(List<AbstractBattleCharacter> characters)
@@ -82,7 +91,6 @@ namespace Battle.Turn
         private void UpdatePreview(AbstractAbility ability, List<AbstractBattleCharacter> alliesAffected, List<AbstractBattleCharacter> enemiesAffected )
         {
             //ClearTurnDisplays();
-
             int cost = Ticks.DefaultActionCost;
 
             if (ability != null)
@@ -105,11 +113,34 @@ namespace Battle.Turn
                 bool thisTurn = turn.Equals(turns.First());
 
                 _turnDisplays[i].DrawTurn(turn.Value, turn.Key.CharSprite,
-                    thisTurn, alliesAffected.Contains(turn.Key), enemiesAffected.Contains(turn.Key));
+                    thisTurn);
+                _turnDisplays[i].BattleCharacter = turn.Key;
             }
 
             _prevTurns = turns;
 
+        }
+
+        public void DrawPointers(List<AbstractBattleCharacter> alliesAffected, List<AbstractBattleCharacter> enemiesAffected)
+        {
+            foreach (var display in _turnDisplays)
+            {
+                if (alliesAffected.Contains(display.BattleCharacter))
+                {
+                    display.SetFriendlyPointer(true);
+                    display.SetEnemyPointer(false);
+                } else if (enemiesAffected.Contains(display.BattleCharacter))
+                {
+                    display.SetEnemyPointer(true);
+                    display.SetFriendlyPointer(false);
+                }
+                else
+                {
+                    display.SetEnemyPointer(false);
+                    display.SetFriendlyPointer(false);
+                }
+                    
+            }
         }
 
         /// <summary>
@@ -161,5 +192,24 @@ namespace Battle.Turn
             Destroy(_content.transform.GetChild(i).gameObject);
         }
 
+        public void Handle(HighlightedAbilityChanged message)
+        {
+            _ability = message.Ability;
+            UpdatePreview(message.Ability, null, null);
+        }
+
+        public void Handle(TargetChanged message)
+        {
+            var enemies = new List<AbstractBattleCharacter>();
+            var friendlies = new List<AbstractBattleCharacter>();
+
+            if (AbstractBattleCharacter.Enemies.Contains(message.Target))
+                enemies.Add(message.Target);
+
+            if (AbstractBattleCharacter.Friendlies.Contains(message.Target))
+                friendlies.Add(message.Target);
+
+            DrawPointers(friendlies,enemies);
+        }
     }
 }

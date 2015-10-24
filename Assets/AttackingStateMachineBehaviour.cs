@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using Battle;
 using Battle.Abilities;
 using Battle.Events.BattleCharacter;
-using JainEventAggregator;
 
 public delegate void TargetDeletage(List<AbstractBattleCharacter> targets);
 

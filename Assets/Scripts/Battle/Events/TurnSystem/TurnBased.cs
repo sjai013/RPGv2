@@ -1,4 +1,4 @@
-﻿namespace Battle.Events.BattleCharacter.Turns
+﻿namespace Battle.Events.TurnSystem
 {
 
     public class TakeAction

@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using Battle.Abilities;
-using Battle.Events.BattleCharacter.Targetting;
-using Battle.Turn;
+using Battle.Events.Targetting;
 using ExtensionMethods;
 using JainEventAggregator;
-using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Battle.Targetter.NoWindow
@@ -155,7 +154,16 @@ namespace Battle.Targetter.NoWindow
 
         private void SetButtonEvent(GameObject pointer, AbstractBattleCharacter caster, List<AbstractBattleCharacter> targets, AbstractActionAbility ability)
         {
-            pointer.GetComponentInChildren<Button>().onClick.AddListener(delegate() {EventAggregator.RaiseEvent(new SubmitAbilityAtTarget() {Ability = ability,Caster = caster,Targets = targets});});
+            pointer.GetComponentInChildren<Button>().onClick.AddListener(delegate {EventAggregator.RaiseEvent(new SubmitAbilityAtTarget() {Ability = ability,Caster = caster,Targets = targets});});
+            EventTrigger trigger = pointer.GetComponentInChildren<EventTrigger>();
+            EventTrigger.Entry entry = new EventTrigger.Entry();
+            entry.eventID = EventTriggerType.Select;
+            entry.callback = new EventTrigger.TriggerEvent();
+            entry.callback.AddListener(
+                delegate { OnTargetChange(targets[0]);});
+            trigger.triggers.Add(entry);
+
         }
+
     }
 }

@@ -11,6 +11,7 @@ namespace Battle.Turn
 
         public Color BaseColor;
         public Color OverColor;
+        public AbstractBattleCharacter BattleCharacter;
 
         [SerializeField] private Image _image;
         [SerializeField] private Image _baseTicksImage;
@@ -33,9 +34,7 @@ namespace Battle.Turn
         /// <param name="ticks">Ticks until action</param>
         /// <param name="sprite">Sprite representing character</param>
         /// <param name="thisTurn">Indicates whether this tick is in action</param>
-        /// <param name="allyTarget">Is this a friendly target?</param>
-        /// <param name="enemyTarget">Is this an enemy target?</param>
-        public void DrawTurn(int ticks, Sprite sprite, bool thisTurn, bool allyTarget, bool enemyTarget)
+        public void DrawTurn(int ticks, Sprite sprite, bool thisTurn)
         {
             var bars = (float) ticks/_maxBaseTicks;
 
@@ -66,13 +65,19 @@ namespace Battle.Turn
             if (_overTicksImage.rectTransform.sizeDelta.x > 0)
                 _overTicksImage.gameObject.SetActive(true);
             
-            _targettedFriendlyImage.gameObject.SetActive(allyTarget);
-
-            _targettedFriendlyImage.gameObject.SetActive(enemyTarget);
-
             _thisTurnImage.gameObject.SetActive(thisTurn);
 
             _image.gameObject.SetActive(true);
+        }
+
+        public void SetFriendlyPointer(bool value)
+        {
+            _targettedFriendlyImage.gameObject.SetActive(value);
+        }
+
+        public void SetEnemyPointer(bool value)
+        {
+            _targettedEnemyImage.gameObject.SetActive(value);
         }
     }
 }
