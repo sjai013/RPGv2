@@ -1,6 +1,6 @@
 ﻿namespace JainEventAggregator
 {
-    public interface IListener<in T>
+    public interface IListener<T>
     {
 
         void Handle(T message);

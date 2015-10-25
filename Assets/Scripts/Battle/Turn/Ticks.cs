@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Battle.Events.Abilities;
+using JainEventAggregator;
 using UnityEngine;
 
 namespace Battle.Turn
@@ -6,7 +8,7 @@ namespace Battle.Turn
     /// <summary>
     /// Manages ticks required for actions and characters.
     /// </summary>
-    public class Ticks : ITurn
+    public class Ticks : ITurn, IListener<AbilitySubmitted>
     {
         public AbstractBattleCharacter Character { get; set; }
 
@@ -32,9 +34,10 @@ namespace Battle.Turn
 
         public Ticks(AbstractBattleCharacter character)
         {
-            _baseInitialTicks = TicksRequired(character.Stats.Agi);
+            _baseInitialTicks = TicksRequired(character.Stats.Agi,1);
             RecoveryTime = _baseInitialTicks*DefaultActionCost;
             Character = character;
+            this.RegisterAllListeners();
         }
 
         /// <summary>
@@ -43,7 +46,7 @@ namespace Battle.Turn
         /// <param name="actionCost">Cost of previous action taken.</param>
         public void ResetTicks(int actionCost = DefaultActionCost)
         {
-            RecoveryTime = _baseInitialTicks * DefaultActionCost;
+            RecoveryTime = _baseInitialTicks * actionCost;
         }
 
         /// <summary>
@@ -100,6 +103,11 @@ namespace Battle.Turn
             RecoveryTime -= ticks;
         }
 
+        public void Handle(AbilitySubmitted message)
+        {
+            if (message.Caster != this.Character) return;
+            ResetTicks(message.Ability.ActionCost);
+        }
     }
 
 }

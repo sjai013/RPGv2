@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Battle.Events.TurnSystem;
+using JainEventAggregator;
+using UnityEngine;
 
 namespace Battle
 {
@@ -13,6 +15,13 @@ namespace Battle
         // Update is called once per frame
         void Update () {
 	
+        }
+
+        protected override void TakeAction()
+        {
+            EventAggregator.RaiseEvent(new TakeManualAction() { BattleCharacter = this as AbstractBattleCharacter });
+
+            Debug.Log(this.name + " taking action.");
         }
 
         public override void Highlight()

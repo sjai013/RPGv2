@@ -4,6 +4,7 @@ using Battle.Abilities;
 using Battle.Events.Abilities;
 using Battle.Events.BattleCharacter;
 using Battle.Events.Targetting;
+using Battle.Events.TurnSystem;
 using JainEventAggregator;
 using UnityEngine;
 using UnityEngine.UI;
@@ -46,6 +47,8 @@ namespace Battle.Targetter
         }
 
 
+        protected abstract void EndTargetting();
+
         void OnDestroy()
         {
             this.UnregisterAllListeners();
@@ -54,6 +57,7 @@ namespace Battle.Targetter
         public void Handle(SubmitAbilityAtTarget message)
         {
             this.Targets = message.Targets;
+            EndTargetting();
             EventAggregator.RaiseEvent(new CharacterAnimating() {Ability = message.Ability, Caster = message.Caster, Targets = message.Targets});
         }
 
@@ -61,6 +65,7 @@ namespace Battle.Targetter
         {
             PrepareTargets(message.Ability as AbstractActionAbility);
         }
+
     }
 
 

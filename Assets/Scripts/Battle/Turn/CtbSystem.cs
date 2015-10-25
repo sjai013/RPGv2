@@ -17,14 +17,13 @@ namespace Battle.Turn
     /// Manages drawing of turn previews.
     /// </summary>
     [RequireComponent(typeof(CanvasGroup))]
-    public class CtbSystem : AbstractTurnSystem, IListener<HighlightedAbilityChanged>, IListener<TargetChanged>
+    public class CtbSystem : AbstractTurnSystem, 
+        IListener<HighlightedAbilityChanged>, IListener<TargetChanged>, IListener<TurnFinished>, IListener<TakeManualAction>, IListener<SubmitAbilityAtTarget>
     {
         [SerializeField] private GameObject _content;
         [SerializeField] private GameObject _turnIndicator;
         [SerializeField] private List<TurnDisplay> _turnDisplays;
         Dictionary<AbstractBattleCharacter,Ticks> _tickSystems = new Dictionary<AbstractBattleCharacter, Ticks>();
-
-        private AbstractAbility _ability;
 
         private CanvasGroup _canvasGroup;
         private List<KeyValuePair<AbstractBattleCharacter, int>> _prevTurns = new List<KeyValuePair<AbstractBattleCharacter, int>>(0);
@@ -50,12 +49,13 @@ namespace Battle.Turn
 
             }
 
-            StartCoroutine(UpdateTurns(AbstractBattleCharacter.Characters));
+            AdvanceTime();
+
         }
 
-        void Update()
+        void AdvanceTime()
         {
-            
+            StartCoroutine(UpdateTurns(AbstractBattleCharacter.Characters));
         }
 
         IEnumerator UpdateTurns(List<AbstractBattleCharacter> characters)
@@ -69,8 +69,7 @@ namespace Battle.Turn
                 foreach (var character in characters)
                 {
                     if (!_tickSystems[character].IncrementTime()) continue;
-                    EventAggregator.RaiseEvent(new TakeAction() {BattleCharacter = character});
-                    StartCoroutine(_canvasGroup.Fade(0.0f, 1.0f, 0.15f));
+                    EventAggregator.RaiseEvent(new PrepareTurn() {BattleCharacter = character});
                     _updatingTurns = false;
                     break;
                 }
@@ -194,7 +193,6 @@ namespace Battle.Turn
 
         public void Handle(HighlightedAbilityChanged message)
         {
-            _ability = message.Ability;
             UpdatePreview(message.Ability, null, null);
         }
 
@@ -210,6 +208,21 @@ namespace Battle.Turn
                 friendlies.Add(message.Target);
 
             DrawPointers(friendlies,enemies);
+        }
+
+        public void Handle(TurnFinished message)
+        {
+            AdvanceTime();
+        }
+
+        public void Handle(TakeManualAction message)
+        {
+            StartCoroutine(_canvasGroup.Fade(0.0f, 1.0f, 0.15f));
+        }
+
+        public void Handle(SubmitAbilityAtTarget message)
+        {
+            StartCoroutine(_canvasGroup.Fade(1.0f, 0.0f, 0.05f));
         }
     }
 }

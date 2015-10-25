@@ -1,14 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Runtime.CompilerServices;
+using Battle;
+using Battle.Events.BattleCharacter;
+using JainEventAggregator;
 
-public class AnimationStateMachineBehaviour : StateMachineBehaviour
+public class AnimationStateMachineBehaviour : StateMachineBehaviour, IListener<TakingDamage>
 {
 
+    private Animator animator;
+    private AbstractBattleCharacter battleCharacter;
     // OnStateEnter is called before OnStateEnter is called on any state inside this state machine
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-
+        this.animator = animator;
+        this.battleCharacter = animator.GetComponent<AbstractBattleCharacter>();
+        this.RegisterAllListeners();
 
     }
 
@@ -38,7 +45,12 @@ public class AnimationStateMachineBehaviour : StateMachineBehaviour
     //}
 
     // OnStateMachineExit is called when exiting a statemachine via its Exit Node
-    //override public void OnStateMachineExit(Animator animator, int stateMachinePathHash) {
-    //
-    //}
+    override public void OnStateMachineExit(Animator animator, int stateMachinePathHash) {
+        this.UnregisterAllListeners();
+    }
+    public void Handle(TakingDamage message)
+    {
+        if (message.Target != battleCharacter) return;
+        animator.SetTrigger("takeDamage");
+    }
 }

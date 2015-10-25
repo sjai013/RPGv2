@@ -4,8 +4,6 @@ using JetBrains.Annotations;
 
 namespace Battle.Turn
 {
-    public delegate void BattleCharDelegate(AbstractBattleCharacter thisBattleCharacter);
-    public delegate void NoReturnDelegate();
     public interface ITurn
     {
         AbstractBattleCharacter Character { get; set; }

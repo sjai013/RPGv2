@@ -15,9 +15,14 @@ namespace UnityEngine.UI.Extensions
         public Color vertex2 = Color.black;
         private Graphic targetGraphic;
 
+        protected override void Awake()
+        {
+            base.Awake();
+            targetGraphic = GetComponent<Graphic>();
+        }
         protected override void Start()
         {
-            targetGraphic = GetComponent<Graphic>();
+            
         }
 
         public override void ModifyMesh(VertexHelper vh)
@@ -58,8 +63,10 @@ namespace UnityEngine.UI.Extensions
                 for (int i = 0; i < count; i++)
                 {
                     vh.PopulateUIVertex(ref uiVertex, i);
+
                     if (!overwriteAllColor && !CompareCarefully(uiVertex.color, targetGraphic.color))
                         continue;
+
                     switch (gradientDir)
                     {
                         case GradientDir.Vertical:

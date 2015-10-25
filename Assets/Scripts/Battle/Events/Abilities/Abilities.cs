@@ -12,5 +12,11 @@ namespace Battle.Events.Abilities
     public class AbilitySubmitted
     {
         public AbstractAbility Ability;
+        public AbstractBattleCharacter Caster;
+    }
+
+    public class AbilityContainerOpened
+    {
+        public AbilityContainer AbilityContainer;
     }
 }

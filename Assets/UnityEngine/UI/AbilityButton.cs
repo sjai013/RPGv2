@@ -1,4 +1,5 @@
-﻿using Battle.Abilities;
+﻿using Battle;
+using Battle.Abilities;
 using Battle.Events.Abilities;
 using JainEventAggregator;
 using UnityEngine.Events;
@@ -15,10 +16,7 @@ namespace UnityEngine.UI
         [SerializeField] private GameObject _pointer;
         private AbstractAbility _ability;
         public AbstractAbility Ability { get {return _ability;} set {SetAbility(value);} }
-        
-
-        public delegate void AbilityDelegate(AbstractAbility ability);
-        //public delegate void Action();
+        public AbstractBattleCharacter Caster { get; set; }
         
         void SetAbility (AbstractAbility ability)
         {
@@ -40,7 +38,7 @@ namespace UnityEngine.UI
 
         public void OnSubmit(BaseEventData eventData)
         {
-            EventAggregator.RaiseEvent(new AbilitySubmitted() {Ability = Ability});
+            EventAggregator.RaiseEvent(new AbilitySubmitted() {Ability = Ability, Caster = Caster});
         }
 
 

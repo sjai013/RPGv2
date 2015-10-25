@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Battle;
 using UnityEngine;
 
 namespace JainEventAggregator
@@ -8,7 +10,9 @@ namespace JainEventAggregator
 
     public static class EventAggregator
     {
-        private static readonly Dictionary<Type,List<object>>  _cache = new Dictionary<Type, List<object>>();
+        private static Dictionary<Type,List<object>>  _cache = new Dictionary<Type, List<object>>();
+        private static bool _eventRaising;
+
 
         public static void Register(this object obj, Type type)
         {
@@ -17,7 +21,12 @@ namespace JainEventAggregator
                 _cache[type] = new List<object>();
             }
 
-            _cache[type].Add(obj);
+            //We only want to register instance if it isn't already registered
+            if (!_cache[type].Contains(obj))
+            {
+                _cache[type].Add(obj);
+            }
+            
         }
 
         public static void Register<T>(this object obj)
@@ -39,12 +48,29 @@ namespace JainEventAggregator
         }
 
         public static void RaiseEvent<T>(T message)
-        {          
+        {
+            if (_eventRaising == true)
+            {
+                CheckCoroutineManager();
+                CoroutineManager.Instance.StartCoroutine(DelayExecution(message));
+                return;
+            }
+
+            _eventRaising = true;
+            Debug.Log("<b><color=blue>" + typeof(T) + "</color></b>");
             if (_cache.ContainsKey(message.GetType()))
             {
                 _cache[message.GetType()].ForEach(x=> NotifyListeners(x,message));
             }
+            _eventRaising = false;
         }
+
+        private static IEnumerator DelayExecution<T> (T message)
+        {
+            yield return null;
+            RaiseEvent(message);
+        }
+
 
         private static void NotifyListeners<T>(object listener, T message)
         {
@@ -58,6 +84,15 @@ namespace JainEventAggregator
                 
             x.Handle(message);
         }
+
+        private static void CheckCoroutineManager()
+        {
+            if (GameObject.Find("EventCoroutineManager") != null) return;
+            var go = new GameObject();
+            go.name = "EventCoroutineManager";
+            go.AddComponent<CoroutineManager>();
+        }
+
 
         public static void RegisterAllListeners(this object obj)
         {

@@ -73,5 +73,13 @@ namespace ExtensionMethods
 
         }
 
+        public static void RemoveAllChildren(this GameObject go)
+        {
+            for (int i = 0; i < go.transform.childCount; i++)
+            {
+                UnityEngine.Object.Destroy(go.transform.GetChild(i).gameObject);
+            }
+        }
+
     }
 }

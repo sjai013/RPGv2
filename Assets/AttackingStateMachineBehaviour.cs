@@ -5,8 +5,7 @@ using System.Collections.Generic;
 using Battle;
 using Battle.Abilities;
 using Battle.Events.BattleCharacter;
-
-public delegate void TargetDeletage(List<AbstractBattleCharacter> targets);
+using JainEventAggregator;
 
 public class AttackingStateMachineBehaviour : StateMachineBehaviour
 {
@@ -68,7 +67,7 @@ public class AttackingStateMachineBehaviour : StateMachineBehaviour
 
     private void SendDamageSignal()
     {
-        _caster.DoDamage(Targets, Ability);
+        EventAggregator.RaiseEvent(new DoDamage() {Ability = Ability, Targets = Targets});
     }
     protected IEnumerator Shoot(GameObject projectile, GameObject target)
     {

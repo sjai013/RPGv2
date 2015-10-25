@@ -12,7 +12,6 @@ namespace Battle.Menu
     sealed class MainActionMenu : AbstractActionMenu, IListener<AbilitySubmitted>
     {
         private static MainActionMenu instance;
-        
 
         protected override void Awake()
         {
@@ -28,12 +27,11 @@ namespace Battle.Menu
 
         private void FadeMenu()
         {
-            StartCoroutine(_canvasGroup.Fade(1.0f, 0.0f, 0.15f, HideMenu));
+            StartCoroutine(_canvasGroup.Fade(1.0f, 0.0f, 0.15f, _content.gameObject.RemoveAllChildren));
         }
 
         protected override void ShowMenu(AbstractBattleCharacter battleCharacter)
         {
-
             Debug.Log("Showing menu");
             StartCoroutine(_canvasGroup.Fade(0.0f, 1.0f, 0.25f));
             _canvasGroup.interactable = true;
@@ -48,6 +46,7 @@ namespace Battle.Menu
                 go.transform.localScale = Vector3.one;
                 var abilityButton = go.GetComponent<AbilityButton>();
                 abilityButton.Ability = ability;
+                abilityButton.Caster = battleCharacter;
                 go.SetActive(true);
             }
 
@@ -56,11 +55,6 @@ namespace Battle.Menu
 
             //Print list of items displayed for debugging
             Debug.Log(battleCharacter.Abilities.FilterAbilities(AbilityType.Base).PrintList());
-        }
-
-        public static void HideMenu()
-        {
-            instance.gameObject.SetActive(false);    
         }
 
         public void Handle(AbilitySubmitted message)

@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Battle;
+using Battle.Events.TurnSystem;
 using Battle.Targetter;
+using JainEventAggregator;
 
 public class MoveToTargetStateMachineBehaviour : StateMachineBehaviour
 {
@@ -79,9 +81,11 @@ public class MoveToTargetStateMachineBehaviour : StateMachineBehaviour
             //Also revert direction character  isfacing to original after doing the whole "move, attack, move back" shebang.
              yield return _thisBattleCharacter.StartCoroutine(RotateTowards(_thisBattleCharacter.gameObject, _thisBattleCharacter.OriginalRotation));
             _target = false;
+            EventAggregator.RaiseEvent(new TurnFinished());
         }
 
         _animator.SetTrigger("moveComplete");
+
     }
 
     protected IEnumerator RotateTowards(GameObject rotatee, Quaternion targetRotation, float speed = 10.0f)

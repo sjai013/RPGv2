@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Battle.Menu
 {
-    abstract class AbstractActionMenu : MonoBehaviour, IListener<TakeAction>
+    abstract class AbstractActionMenu : MonoBehaviour, IListener<TakeManualAction>
     {
 
         protected List<AbstractAbility> _abilities;
@@ -31,7 +31,7 @@ namespace Battle.Menu
             this.UnregisterAllListeners();
         }
 
-        public void Handle(TakeAction message)
+        public void Handle(TakeManualAction message)
         {
             ShowMenu(message.BattleCharacter);
         }

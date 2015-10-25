@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Battle.Abilities;
 using Battle.Abilities.Damage;
 using UnityEngine;
 
@@ -24,6 +25,12 @@ namespace Battle.Events.BattleCharacter
     {
         public List<AbstractBattleCharacter> Targets;
         public AbstractDamageBehaviour.Damage Damage;
+    }
+
+    public class DoDamage
+    {
+        public List<AbstractBattleCharacter> Targets;
+        public AbstractActionAbility Ability;
     }
 
     public class TakingDamage

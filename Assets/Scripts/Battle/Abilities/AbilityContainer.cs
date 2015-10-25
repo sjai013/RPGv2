@@ -7,5 +7,6 @@ namespace Battle.Abilities
         protected AbilityContainer(string name, int actionCost, AbilityType abilityType) : base(name, actionCost, abilityType)
         {
         }
+
     }
 }

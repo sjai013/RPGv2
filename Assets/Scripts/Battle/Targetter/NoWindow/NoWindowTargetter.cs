@@ -29,6 +29,19 @@ namespace Battle.Targetter.NoWindow
            // AbstractAbility.AbilitySubmit += PrepareTargets;
         }
 
+        protected override void EndTargetting()
+        {
+            foreach (var pointer in _friendlyPointers)
+            {
+                Destroy(pointer.Value.gameObject);
+            }
+
+            foreach (var pointer in _enemyPointers)
+            {
+                Destroy(pointer.Value.gameObject);
+            }
+        }
+
         public override string Identifier
         {
             get { return "No Window Targetter"; }

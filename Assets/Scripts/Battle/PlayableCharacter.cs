@@ -1,11 +1,7 @@
-﻿using System;
-using Battle.Abilities;
-using Battle.Events.BattleCharacter;
-using ExtensionMethods;
+﻿using Battle.Events.BattleCharacter;
+using Battle.Events.TurnSystem;
 using JainEventAggregator;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 namespace Battle
 {
@@ -17,9 +13,9 @@ namespace Battle
             EventAggregator.RaiseEvent(new AddBattleCharacter() {BattleCharacter = this});            
         }
 
-        protected override void TakeAction(AbstractBattleCharacter character)
+        protected override void TakeAction()
         {        
-            base.TakeAction(character);
+            EventAggregator.RaiseEvent(new TakeManualAction() {BattleCharacter = this as AbstractBattleCharacter});
             Debug.Log(General.Name + " performing action.");
         }
 

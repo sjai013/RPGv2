@@ -15,7 +15,8 @@ namespace Battle
     /// Class for managing all characters which can take action (i.e. player, monsters)
     /// </summary>
     [RequireComponent(typeof(Animator))]
-    public abstract class AbstractBattleCharacter: MonoBehaviour, IListener<AddBattleCharacter>, IListener<RemoveBattleCharacter>, IListener<TakeAction>
+    public abstract class AbstractBattleCharacter: MonoBehaviour, 
+        IListener<AddBattleCharacter>, IListener<RemoveBattleCharacter>, IListener<TakeManualAction>, IListener<TakingDamage>, IListener<DoDamage>, IListener<PrepareTurn>
     {
         public AnimationParameters AnimParameters { get; private set; }
 
@@ -125,10 +126,7 @@ namespace Battle
             return Enemies.Any(c => c.Equals(this));
         }
 
-        protected virtual void TakeAction(AbstractBattleCharacter character)
-        {
-            ActiveBattleCharacter = this;
-        }
+        protected abstract void TakeAction();
 
         public void RefreshHandlers()
         {
@@ -141,24 +139,12 @@ namespace Battle
         }
 
         
-        public void DoDamage(List<AbstractBattleCharacter> targets, AbstractActionAbility ability)
-        {
-            var damage = ability.DoDamage(this,targets);
-            EventAggregator.RaiseEvent(new DoingDamage() { Damage = damage, Targets = targets });
-            TakeDamage(targets, damage);
-        }
-
 
         private void TakeDamage(List<AbstractBattleCharacter> targets, AbstractDamageBehaviour.Damage damage)
         {
             //TODO: Need a KeyValue Pair for target and damage, so each target has a separate associated damage instance
             foreach (var target in targets)
             {
-                target.Stats.Hp -= damage.damage;
-                var animator = target.GetComponent<Animator>();
-                if (animator != null)
-                    animator.SetTrigger("takeDamage");
-
                 EventAggregator.RaiseEvent(new TakingDamage() {Damage = damage,Target = target});
             }
         }
@@ -202,11 +188,32 @@ namespace Battle
             }
         }
 
-        public void Handle(TakeAction message)
+        public void Handle(TakeManualAction message)
         {
             if (this != message.BattleCharacter) return;
-
             ActiveBattleCharacter = message.BattleCharacter;
+
+        }
+
+        public void Handle(TakingDamage message)
+        {
+            if (this != message.Target) return;
+            message.Target.Stats.Hp -= message.Damage.damage;
+        }
+
+        public void Handle(DoDamage message)
+        {
+            if (!message.Targets.Contains(this)) return;
+            var damage = message.Ability.DoDamage(this, message.Targets);
+            EventAggregator.RaiseEvent(new DoingDamage() { Damage = damage, Targets = message.Targets });
+            TakeDamage(message.Targets, damage);
+        }
+
+        public void Handle(PrepareTurn message)
+        {
+            if (message.BattleCharacter != this) return;
+            ActiveBattleCharacter = this;
+            TakeAction();
         }
 
         public override string ToString()
