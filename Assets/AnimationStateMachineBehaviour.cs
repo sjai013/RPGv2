@@ -52,5 +52,6 @@ public class AnimationStateMachineBehaviour : StateMachineBehaviour, IListener<T
     {
         if (message.Target != battleCharacter) return;
         animator.SetTrigger("takeDamage");
+        animator.SetInteger("DamageVal",message.Damage.damage);
     }
 }

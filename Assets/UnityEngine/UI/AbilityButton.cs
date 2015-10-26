@@ -41,7 +41,5 @@ namespace UnityEngine.UI
             EventAggregator.RaiseEvent(new AbilitySubmitted() {Ability = Ability, Caster = Caster});
         }
 
-
-
     }
 }

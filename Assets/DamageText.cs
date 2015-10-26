@@ -14,6 +14,7 @@ public class DamageText : MonoBehaviour, IListener<TakingDamage>
 	    this.RegisterAllListeners();
 	}
 	
+
     public void Handle(TakingDamage message)
     {
         var go = Instantiate(_damageText);

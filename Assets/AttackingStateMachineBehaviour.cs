@@ -16,11 +16,13 @@ public class AttackingStateMachineBehaviour : StateMachineBehaviour
     private bool _projectileShooting = false;
     private AbstractBattleCharacter _caster;
     public AbstractActionAbility Ability;
-    public List<AbstractBattleCharacter> Targets; 
+    public List<AbstractBattleCharacter> Targets;
+    private bool _damageSent;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-	{
+    {
+        _damageSent = false;
         _caster = animator.GetComponent<AbstractBattleCharacter>();
         _projectileShooting = false;
 
@@ -39,7 +41,16 @@ public class AttackingStateMachineBehaviour : StateMachineBehaviour
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-	    if (_projectile == null) return;
+	    if (_projectile == null)
+	    {
+	        if ((_damageSent) || (!(stateInfo.normalizedTime > 0.5)))
+	        {
+	            return;
+	        }
+	        SendDamageSignal();
+	        return;
+	    }
+
 	    if ((_projectileShooting) || !(stateInfo.normalizedTime > 0.5)) return;
 	    _projectileShooting = true;
 	    _projectile.transform.SetParent(null);
@@ -67,6 +78,7 @@ public class AttackingStateMachineBehaviour : StateMachineBehaviour
 
     private void SendDamageSignal()
     {
+        _damageSent = true;
         EventAggregator.RaiseEvent(new DoDamage() {Ability = Ability, Targets = Targets});
     }
     protected IEnumerator Shoot(GameObject projectile, GameObject target)

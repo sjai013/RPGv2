@@ -38,4 +38,5 @@ namespace Battle.Events.BattleCharacter
         public AbstractBattleCharacter Target;
         public AbstractDamageBehaviour.Damage Damage;
     }
+
 }
