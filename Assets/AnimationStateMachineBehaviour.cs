@@ -48,10 +48,11 @@ public class AnimationStateMachineBehaviour : StateMachineBehaviour, IListener<T
     override public void OnStateMachineExit(Animator animator, int stateMachinePathHash) {
         this.UnregisterAllListeners();
     }
+
+
     public void Handle(TakingDamage message)
     {
         if (message.Target != battleCharacter) return;
         animator.SetTrigger("takeDamage");
-        animator.SetInteger("DamageVal",message.Damage.damage);
     }
 }

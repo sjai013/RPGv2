@@ -27,15 +27,20 @@ namespace Battle.Menu
 
         private void FadeMenu()
         {
-            StartCoroutine(_canvasGroup.Fade(1.0f, 0.0f, 0.15f, _content.gameObject.RemoveAllChildren));
+            _canvasGroup.interactable = false;
+           // _canvasGroup.alpha = 0.0f;
+           // _content.gameObject.RemoveAllChildren();
+           StartCoroutine(_canvasGroup.Fade(1.0f, 0.0f, 0.25f, _content.gameObject.RemoveAllChildren));
         }
 
         protected override void ShowMenu(AbstractBattleCharacter battleCharacter)
         {
             Debug.Log("Showing menu");
+            _canvasGroup.interactable = false;
             StartCoroutine(_canvasGroup.Fade(0.0f, 1.0f, 0.25f));
-            _canvasGroup.interactable = true;
 
+            _content.gameObject.RemoveAllChildren();
+            
             //TODO: Code for loading menu based on actions character can actually perform.
             _abilities = battleCharacter.Abilities.FilterAbilities(AbilityType.Base);
 
@@ -50,11 +55,13 @@ namespace Battle.Menu
                 go.SetActive(true);
             }
 
-            //Select the first item
-            _content.GetComponentInChildren<Selectable>().Select();
 
             //Print list of items displayed for debugging
             Debug.Log(battleCharacter.Abilities.FilterAbilities(AbilityType.Base).PrintList());
+
+            //Select the first item
+            _content.GetComponentInChildren<Selectable>().Select();
+            _canvasGroup.interactable = true;
         }
 
         public void Handle(AbilitySubmitted message)
